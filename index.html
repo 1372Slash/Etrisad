@@ -27,6 +27,10 @@
                         xl: '24px',
                     },
                     keyframes: {
+                        aurora: {
+                            from: { backgroundPosition: '0% 50%' },
+                            to: { backgroundPosition: '100% 50%' },
+                        },
                         'open-menu': {
                            '0%': { transform: 'translateX(100%) scaleY(0)', opacity: '0' },
                            '70%': { transform: 'translateX(-3%) scaleY(1.02)', opacity: '1' },
@@ -38,6 +42,7 @@
                         }
                     },
                     animation: {
+                        aurora: 'aurora 20s ease-in-out infinite alternate',
                         'open-menu': 'open-menu 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards',
                         'close-menu': 'close-menu 0.4s cubic-bezier(0.32, 0, 0.67, 0) forwards'
                     },
@@ -56,6 +61,8 @@
             background: radial-gradient(at 20% 80%, hsla(158, 77%, 20%, 0.3) 0px, transparent 50%),
                         radial-gradient(at 80% 10%, hsla(158, 44%, 13%, 0.2) 0px, transparent 50%),
                         radial-gradient(at 50% 50%, hsla(158, 77%, 20%, 0.2) 0px, transparent 50%);
+            background-size: 200% 200%;
+            animation: aurora 20s ease-in-out infinite alternate;
             filter: blur(60px);
         }
 
@@ -203,7 +210,7 @@
                             <button class="bg-gradient-to-r from-accent to-yellow-400 text-black px-8 py-3 rounded-full font-semibold text-base hover:scale-105 transition-transform duration-300">Jelajahi Era Ini</button>
                         </div>
                         <div class="relative flex items-center justify-center min-h-[200px]">
-                            <div class="absolute w-full h-full bg-secondary rounded-full blur-3xl opacity-40 animate-aurora"></div>
+                            <div class="absolute w-full h-full bg-secondary rounded-full blur-3xl opacity-40"></div>
                             <span class="material-symbols-outlined text-9xl text-accent relative">flare</span>
                         </div>
                     </div>
