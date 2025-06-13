@@ -418,7 +418,7 @@
                 </a>
                 <!-- Desktop Navigation -->
                 <nav class="hidden md:flex items-center space-x-6">
-                    <a href="#home"
+                    <a href="index.html"
                         class="nav-link text-gray-300 hover:text-white transition-colors duration-300 font-medium flex items-center gap-2 text-sm whitespace-nowrap">
                         <span class="material-symbols-outlined">home</span>Home
                     </a>
@@ -596,7 +596,7 @@
                 </div>
                 <!-- Divisi section button -->
                 <div class="text-center mt-12">
-                    <a href="#"
+                    <a href="divisi.html"
                         class="btn-accent inline-flex items-center gap-2 px-8 py-3 rounded-full font-semibold text-base glow-on-hover">
                         Lihat Semua Divisi
                     </a>
@@ -797,12 +797,15 @@
             const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
             navLinks.forEach(link => {
                 link.addEventListener('click', function (e) {
-                    e.preventDefault();
                     const href = this.getAttribute('href');
+                    // Only prevent default and do smooth scroll for anchor links
                     if (href.startsWith('#')) {
+                        e.preventDefault();
                         const sectionId = href.substring(1);
                         scrollToSection(sectionId);
                     }
+                    // For non-anchor links, let the default behavior happen
+                    // This will navigate to the new page
                 });
             });
 
