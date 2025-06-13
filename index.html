@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <!-- Modern Font (Geist Sans) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/geist-sans@5.0.3/css/all.min.css">
-    <link rel="icon" type="image/png" href="assets/images/etrisad_icon.png">
     <script>
         tailwind.config = {
             theme: {
@@ -39,24 +38,18 @@
                         'close-menu': {
                            '0%': { transform: 'translateX(0) scaleY(1)', opacity: '1' },
                            '100%': { transform: 'translateX(100%) scaleY(0.9)', opacity: '0' },
-                        },
-                        'ripple-effect': {
-                            '0%': { width: '0px', height: '0px', opacity: '0.5' },
-                            '100%': { width: '80px', height: '80px', opacity: '0' },
                         }
                     },
                     animation: {
                         aurora: 'aurora 20s ease-in-out infinite alternate',
                         'open-menu': 'open-menu 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards',
-                        'close-menu': 'close-menu 0.4s cubic-bezier(0.32, 0, 0.67, 0) forwards',
-                        'ripple': 'ripple-effect 0.6s linear'
+                        'close-menu': 'close-menu 0.4s cubic-bezier(0.32, 0, 0.67, 0) forwards'
                     },
                 }
             }
         }
     </script>
     <style>
-        body, a, button { cursor: none; }
         body { background-color: #0A0A0A; color: #E2E2E2; }
         
         #animated-bg {
@@ -74,8 +67,7 @@
 
         .gradient-text { background: linear-gradient(135deg, #F5E6A8, #FFD700); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
         .glass-effect, .pill-navbar { background: rgba(16, 16, 16, 0.6); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .perspective-container { perspective: 1000px; }
-        .modern-card { background-color: #111111; position: relative; overflow: hidden; border: 1px solid #333; transform-style: preserve-3d; transition: transform 0.1s linear; }
+        .modern-card { background-color: #111111; position: relative; overflow: hidden; border: 1px solid #333; transition: all 0.3s ease; }
         .modern-card::before { content: ''; position: absolute; inset: 0; border-radius: inherit; padding: 1px; background: conic-gradient(from 180deg at 50% 50%, rgba(2, 6, 23, 0) 0deg, #F5E6A8 360deg); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; opacity: 0; transition: opacity 0.3s ease-in-out; }
         .modern-card:hover::before { opacity: 1; }
         .body-no-scroll { overflow: hidden; }
@@ -83,25 +75,10 @@
         #mobile-menu-panel { transform-origin: top right; }
         .fade-in-section { opacity: 0; transition: opacity 0.8s ease-out; }
         .fade-in-section.is-visible { opacity: 1; }
-        #cursor-dot, #cursor-outline { position: fixed; top: 0; left: 0; pointer-events: none; border-radius: 50%; transform: translate(-50%, -50%); z-index: 9999; }
-        #cursor-dot { width: 8px; height: 8px; background-color: #F5E6A8; }
-        #cursor-outline { width: 40px; height: 40px; border: 2px solid rgba(245, 229, 168, 0.5); transition: all 0.1s ease-out; }
-        .click-ripple {
-            position: fixed; /* Changed from absolute to fixed */
-            border-radius: 50%;
-            border: 2px solid rgba(245, 229, 168, 0.5);
-            background-color: transparent;
-            pointer-events: none;
-            transform: translate(-50%, -50%);
-            z-index: 9998;
-        }
-
     </style>
 </head>
 <body class="bg-primary font-sans overflow-x-hidden">
     <div id="animated-bg"></div>
-    <div id="cursor-dot"></div>
-    <div id="cursor-outline"></div>
 
     <!-- Navbar -->
     <header id="navbar" class="fixed top-0 left-0 right-0 z-40 transition-all duration-500 ease-in-out">
@@ -155,7 +132,7 @@
     <main>
         <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
             <div class="container mx-auto px-6 text-center relative z-10 flex flex-col items-center">
-                <img src="assets/images/etrisad_long.png" alt="Etrisad Logo" class="h-[21] w-auto mb-6">
+                <img src="assets/images/etrisad_long.png" alt="Etrisad Logo" class="h-20 w-auto mb-6">
                 <h1 class="text-5xl md:text-7xl font-bold mb-6 gradient-text tracking-tighter">Kreatifitas, Selamanya</h1>
                 <p class="text-lg md:text-xl mb-10 max-w-3xl mx-auto text-gray-400 leading-relaxed">Menemukan konten unik dan kreatif dari setiap divisi kami, serta informasi detail tentang aktivitas kami.</p>
                 <div class="flex gap-4">
@@ -165,10 +142,10 @@
         </section>
         
         <section id="berita" class="py-24 px-6 fade-in-section">
-            <div class="container mx-auto max-w-4xl perspective-container">
+            <div class="container mx-auto max-w-4xl">
                  <h2 class="text-4xl font-bold text-center mb-4 gradient-text tracking-tighter">Papan Berita</h2>
                  <p class="text-lg text-gray-400 text-center mb-12">Inovasi terbaru dari tim kami.</p>
-                <div class="modern-card p-8 rounded-2xl transition-all duration-300">
+                <div class="modern-card p-8 rounded-2xl transition-all duration-300 hover:scale-105">
                     <h3 class="text-2xl font-bold mb-4 text-gray-100">Peluncuran Proyek Baru</h3>
                     <p class="text-gray-400 mb-6">Tim kreatif kami telah merilis inovasi terbaru yang menggabungkan teknologi dan seni dalam satu platform terintegrasi.</p>
                     <a href="#" class="text-accent hover:text-yellow-200 font-semibold flex items-center gap-2">Baca Selengkapnya <span class="material-symbols-outlined">arrow_forward</span></a>
@@ -180,7 +157,7 @@
             <div class="container mx-auto max-w-7xl">
                 <h2 class="text-4xl font-bold text-center mb-4 gradient-text tracking-tighter">Divisi Kami</h2>
                 <p class="text-lg text-gray-400 text-center mb-12">Pilar kreatifitas di Etrisad.</p>
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-12 perspective-container">
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-12">
                     <div class="modern-card group cursor-pointer rounded-2xl overflow-hidden transition-transform duration-300 hover:-translate-y-2"><div class="relative w-full aspect-square flex items-end p-5"><div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div><h3 class="text-xl font-bold text-white relative z-10">1372slash</h3></div></div>
                     <div class="modern-card group cursor-pointer rounded-2xl overflow-hidden transition-transform duration-300 hover:-translate-y-2"><div class="relative w-full aspect-square flex items-end p-5"><div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div><h3 class="text-xl font-bold text-white relative z-10">AudioResult</h3></div></div>
                     <div class="modern-card group cursor-pointer rounded-2xl overflow-hidden transition-transform duration-300 hover:-translate-y-2"><div class="relative w-full aspect-square flex items-end p-5"><div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div><h3 class="text-xl font-bold text-white relative z-10">Azure</h3></div></div>
@@ -201,7 +178,7 @@
                  <p class="text-lg text-gray-400 text-center mb-12">Karya visual dari tim kami.</p>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <!-- Last Video -->
-                    <div class="modern-card p-6 rounded-2xl flex flex-col gap-4 perspective-container">
+                    <div class="modern-card p-6 rounded-2xl flex flex-col gap-4">
                          <h3 class="text-xl font-bold text-gray-100">Last Video</h3>
                          <div class="aspect-video">
                              <iframe class="w-full h-full rounded-lg" src="https://www.youtube.com/embed/videoseries?list=PLEXbubK1RLvXbUmwg2vaKZrjotvzeHT7W" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -209,7 +186,7 @@
                          <button class="w-full bg-brand-gray text-white py-3 rounded-full font-semibold hover:bg-gray-700 transition-colors">Lihat Semua Video</button>
                     </div>
                     <!-- Motion Journey -->
-                     <div class="modern-card p-6 rounded-2xl flex flex-col gap-4 perspective-container">
+                     <div class="modern-card p-6 rounded-2xl flex flex-col gap-4">
                          <h3 class="text-xl font-bold text-gray-100">Motion Journey</h3>
                          <div class="aspect-video">
                              <iframe class="w-full h-full rounded-lg" src="https://www.youtube.com/embed/videoseries?list=PLEXbubK1RLvX5fN7msBJx4jXQdgDY6efA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -221,10 +198,10 @@
         </section>
 
         <section id="era" class="py-24 px-6 fade-in-section">
-            <div class="container mx-auto max-w-5xl perspective-container">
+            <div class="container mx-auto max-w-5xl">
                 <h2 class="text-4xl font-bold text-center mb-4 gradient-text tracking-tighter">Era Terkini</h2>
                 <p class="text-lg text-gray-400 text-center mb-12">Fase terbaru dalam perjalanan kami.</p>
-                <div class="modern-card p-8 rounded-2xl">
+                <div class="modern-card p-8 rounded-2xl hover:scale-105">
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                         <div>
                             <h3 class="text-4xl font-bold mb-4 gradient-text tracking-tight">Sunny Side</h3>
@@ -315,58 +292,6 @@
                     }
                 });
             });
-
-            // --- Cursor Trail and Ripple Effect ---
-            const cursorDot = document.getElementById('cursor-dot');
-            const cursorOutline = document.getElementById('cursor-outline');
-
-            window.addEventListener('mousemove', function(e) {
-                const posX = e.clientX;
-                const posY = e.clientY;
-
-                cursorDot.style.left = `${posX}px`;
-                cursorDot.style.top = `${posY}px`;
-
-                cursorOutline.animate({
-                    left: `${posX}px`,
-                    top: `${posY}px`
-                }, { duration: 500, fill: "forwards" });
-            });
-
-            window.addEventListener('click', function(e) {
-                const ripple = document.createElement('div');
-                ripple.className = 'click-ripple';
-                ripple.style.left = `${e.clientX}px`;
-                ripple.style.top = `${e.clientY}px`;
-                document.body.appendChild(ripple);
-                ripple.addEventListener('animationend', () => {
-                    document.body.removeChild(ripple);
-                });
-                ripple.classList.add('animate-ripple');
-            });
-
-
-            // --- 3D Tilt Effect on Cards ---
-            const cards = document.querySelectorAll('.modern-card');
-            cards.forEach(card => {
-                const maxTilt = 8; // Max tilt in degrees
-
-                card.addEventListener('mousemove', (e) => {
-                    const { left, top, width, height } = card.getBoundingClientRect();
-                    const x = e.clientX - left;
-                    const y = e.clientY - top;
-
-                    const rotateX = ((y / height) - 0.5) * -maxTilt * 2;
-                    const rotateY = ((x / width) - 0.5) * maxTilt * 2;
-
-                    card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
-                });
-
-                card.addEventListener('mouseleave', () => {
-                    card.style.transform = 'rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
-                });
-            });
-
 
             // --- Scroll-triggered Fade-in Animation ---
             const fadeInSections = document.querySelectorAll('.fade-in-section');
