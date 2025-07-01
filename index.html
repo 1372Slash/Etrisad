@@ -82,12 +82,12 @@
     </header>
 
     <!-- Off-canvas Mobile Menu -->
-    <div id="menu-overlay" class="fixed inset-0 bg-black/60 z-40 hidden md:hidden"></div>
+    <div id="menu-overlay" class="fixed inset-0 bg-black/60 z-40 hidden lg:hidden"></div>
     <div id="mobile-menu-panel"
-        class="fixed top-4 right-4 bottom-4 w-[calc(100%-2rem)] max-w-sm bg-brand-gray/80 backdrop-blur-2xl shadow-2xl z-50 md:hidden rounded-2xl border border-white/10 hidden">
+        class="fixed top-4 right-4 bottom-4 w-[calc(100%-2rem)] max-w-sm bg-brand-gray/80 backdrop-blur-2xl shadow-2xl z-50 lg:hidden rounded-2xl border border-white/10 hidden">
         <div class="flex flex-col h-full p-6">
             <div class="flex justify-between items-center mb-10">
-                <a href="#home"><img src="assets/images/etrisad_icon.png" alt="Etrisad Logo" class="h-8 w-auto"></a>
+                <a href="#home"><img src="assets/images/etrisad_long.png" alt="Etrisad Logo" class="h-auto w-32"></a>
                 <button id="close-menu-btn" class="p-2">
                     <svg class="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
@@ -328,13 +328,17 @@
                     if (window.scrollY > 50) {
                         navbar.classList.add('p-3');
                         navbarContainer.classList.add('pill-navbar', 'rounded-full');
-                        mainLogo.classList.add('hidden');
-                        scrollLogo.classList.remove('hidden');
+                        mainLogo.style.opacity = '0';
+                        scrollLogo.style.opacity = '1';
+                        scrollLogo.style.position = 'static';
+                        mainLogo.style.position = 'absolute';
                     } else {
                         navbar.classList.remove('p-3');
                         navbarContainer.classList.remove('pill-navbar', 'rounded-full');
-                        mainLogo.classList.remove('hidden');
-                        scrollLogo.classList.add('hidden');
+                        mainLogo.style.opacity = '1';
+                        scrollLogo.style.opacity = '0';
+                        mainLogo.style.position = 'static';
+                        scrollLogo.style.position = 'absolute';
                     }
                 });
             })
@@ -360,14 +364,20 @@
 
                 if (window.scrollY > 50) {
                     navbar.classList.add('p-3');
-                    navbarContainer.classList.add('pill-navbar', 'rounded-full');
-                    mainLogo.classList.add('hidden');
-                    scrollLogo.classList.remove('hidden');
+                    navbarContainer.classList.add('pill-navbar', 'rounded-full', 'border-white/10');
+                    navbarContainer.classList.remove('rounded-xl', 'border-transparent');
+                    mainLogo.style.opacity = '0';
+                    scrollLogo.style.opacity = '1';
+                    scrollLogo.style.position = 'static';
+                    mainLogo.style.position = 'absolute';
                 } else {
                     navbar.classList.remove('p-3');
-                    navbarContainer.classList.remove('pill-navbar', 'rounded-full');
-                    mainLogo.classList.remove('hidden');
-                    scrollLogo.classList.add('hidden');
+                    navbarContainer.classList.remove('pill-navbar', 'rounded-full', 'border-white/10');
+                    navbarContainer.classList.add('rounded-xl', 'border-transparent');
+                    mainLogo.style.opacity = '1';
+                    scrollLogo.style.opacity = '0';
+                    mainLogo.style.position = 'static';
+                    scrollLogo.style.position = 'absolute';
                 }
             });
 

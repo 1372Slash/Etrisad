@@ -1,12 +1,31 @@
-<div id="navbar-container" class="transition-all duration-300 px-4 py-3">
+<div id="navbar-container" class="transition-all duration-500 ease-in-out px-4 py-3">
     <div class="flex items-center justify-between mx-auto navbar-width">
         <!-- Logo -->
         <a href="#home" class="flex items-center space-x-3 z-50">
-            <img id="main-logo" src="assets/images/etrisad_long.png" alt="Etrisad Logo" class="h-9 w-auto">
-            <img id="scroll-logo" src="assets/images/etrisad_icon.png" alt="Etrisad Logo" class="h-8 w-auto hidden">
+            <img id="main-logo" src="assets/images/etrisad_long.png" alt="Etrisad Logo" class="h-auto w-20 transition-all duration-500">
+            <img id="scroll-logo" src="assets/images/etrisad_icon.png" alt="Etrisad Logo" class="h-8 w-auto opacity-0 duration-500">
         </a>
+        <!-- Tablet Only: 4 Top Menu Icons Without Text -->
+        <nav id="tablet-nav" class="hidden md:flex lg:hidden items-center space-x-4 transition-opacity transition-transform duration-500">
+            <a href="index.html"
+                class="nav-link text-gray-300 hover:text-white transition-colors duration-300 flex items-center justify-center text-xl p-2 rounded-lg transition-all duration-500">
+                <span class="material-symbols-outlined">home</span>
+            </a>
+            <a href="contents.html"
+                class="nav-link text-gray-300 hover:text-white transition-colors duration-300 flex items-center justify-center text-xl p-2 rounded-lg transition-all duration-500">
+                <span class="material-symbols-outlined">article</span>
+            </a>
+            <a href="divisi.html"
+                class="nav-link text-gray-300 hover:text-white transition-colors duration-300 flex items-center justify-center text-xl p-2 rounded-lg transition-all duration-500">
+                <span class="material-symbols-outlined">hub</span>
+            </a>
+            <a href="shutdown.html"
+                class="nav-link text-gray-300 hover:text-white transition-colors duration-300 flex items-center justify-center text-xl p-2 rounded-lg transition-all duration-500">
+                <span class="material-symbols-outlined">play_circle</span>
+            </a>
+        </nav>
         <!-- Desktop Navigation -->
-        <nav class="hidden md:flex items-center space-x-6">
+        <nav class="hidden lg:flex items-center space-x-6 transition-opacity transition-transform duration-500 navbar-width">
             <a href="index.html"
                 class="nav-link text-gray-300 hover:text-white transition-colors duration-300 font-medium flex items-center gap-2 text-sm whitespace-nowrap">
                 <span class="material-symbols-outlined">home</span>Home
@@ -55,7 +74,7 @@
             </div>
         </nav>
         <!-- Mobile Menu Button -->
-        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg z-50">
+        <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg z-50 transition-opacity transition-transform duration-500">
             <svg class="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
             </svg>
