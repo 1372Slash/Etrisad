@@ -1,0 +1,347 @@
+    @font-face {
+            font-family: Ribes;
+            src: url(assets/fonts/Ribes-Regular.otf);
+        }
+
+        @font-face {
+            font-family: Parkinsans;
+            src: url(assets/fonts/Parkinsans-Regular.ttf);
+        }
+
+        .font-nauryz {
+            font-family: Ribes, sans-serif;
+        }
+
+        .font-space {
+            font-family: Parkinsans, sans-serif;
+        }
+
+        body {
+            background-color: #0A0A0A;
+            color: #E2E2E2;
+        }
+
+        #animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -10;
+            background: radial-gradient(at 20% 80%, hsla(158, 77%, 20%, 0.3) 0px, transparent 50%),
+                radial-gradient(at 80% 10%, hsla(158, 44%, 13%, 0.2) 0px, transparent 50%),
+                radial-gradient(at 50% 50%, hsla(158, 77%, 20%, 0.2) 0px, transparent 50%);
+            background-size: 200% 200%;
+            animation: aurora 20s ease-in-out infinite alternate;
+            filter: blur(60px);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #F5E6A8, #FFD700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .glass-effect,
+        .pill-navbar {
+            background: rgba(16, 16, 16, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Glassmorphism effect */
+        .glass-effect {
+            background: rgba(30, 30, 30, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+        }
+
+        /* Gradient overlay for images */
+        .gradient-overlay {
+            position: relative;
+        }
+
+        .gradient-overlay::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.7) 100%);
+            border-radius: inherit;
+            z-index: 1;
+        }
+
+        .gradient-overlay>* {
+            position: relative;
+            z-index: 2;
+        }
+
+        .modern-card {
+            background-color: #111111;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .modern-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            /* border-radius: inherit; */
+            padding: 1px;
+            /* background: conic-gradient(from 180deg at 50% 50%, rgba(2, 6, 23, 0) 0deg, #F5E6A8 360deg);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude; */
+            opacity: 0;
+            transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .modern-card:hover {
+            transform: translateY(-5px);
+            box-shadow:
+                0 10px 30px -10px rgba(245, 230, 168, 0.3),
+                0 0 20px 0 rgba(245, 230, 168, 0.1);
+        }
+
+        .modern-card:hover::before {
+            opacity: 1;
+        }
+
+        .body-no-scroll {
+            overflow: hidden;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 20;
+        }
+
+        #mobile-menu-panel {
+            transform-origin: top right;
+        }
+
+        .fade-in-section {
+            opacity: 0;
+            transition: opacity 0.8s ease-out;
+        }
+
+        .fade-in-section.is-visible {
+            opacity: 1;
+        }
+
+        .shine-effect {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .shine-effect::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg,
+                    transparent 0%,
+                    rgba(255, 255, 255, 0.2) 50%,
+                    transparent 100%);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1;
+        }
+
+        .shine-effect:hover::before {
+            left: 100%;
+        }
+
+        /* Tambahkan CSS berikut di dalam tag <style> */
+        .btn-accent {
+            background: linear-gradient(90deg, #F5E6A8 0%, #FFD700 100%);
+            border: none;
+            color: black;
+            font-weight: 500;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            /* Perbaikan transisi */
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .btn-accent::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg,
+                    transparent 0%,
+                    rgba(255, 255, 255, 0.3) 50%,
+                    transparent 100%);
+            /* Perbaikan transisi shine effect */
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: -1;
+        }
+
+        .btn-accent:hover::before {
+            left: 100%;
+        }
+
+        .btn-accent:hover {
+            box-shadow: 0 5px 15px rgba(245, 230, 168, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .btn-nonactive {
+            transition: all 0.3s ease;
+        }
+
+        .btn-nonactive:hover {
+            transform: translateY(-2px);
+        }
+
+        .glow-on-hover {
+            box-shadow: 0 0 0 0 rgba(245, 230, 168, 0);
+            /* Perbaikan transisi glow */
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glow-on-hover:hover {
+            box-shadow: 0 0 20px 2px rgba(245, 230, 168, 0.3);
+        }
+
+        /* Animation delays */
+        .animate-delay-100 {
+            animation-delay: 0.1s;
+        }
+
+        .animate-delay-200 {
+            animation-delay: 0.2s;
+        }
+
+        .animate-delay-300 {
+            animation-delay: 0.3s;
+        }
+
+        .animate-delay-400 {
+            animation-delay: 0.4s;
+        }
+
+        /* Card hover effects - Enhanced version */
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            border-color: rgba(245, 230, 168, 0.3);
+            box-shadow:
+                0 10px 30px -10px rgba(245, 230, 168, 0.3),
+                0 0 0 1px rgba(245, 230, 168, 0.2);
+        }
+
+        /* Container hover effects - Enhanced version */
+        .container-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+        }
+
+        .container-hover:hover {
+            border-color: rgba(245, 230, 168, 0.2);
+            box-shadow:
+                0 15px 40px -15px rgba(245, 230, 168, 0.2),
+                0 0 0 1px rgba(245, 230, 168, 0.1);
+        }
+
+        /* Modern card effects */
+        .modern-card {
+            background-color: #111111;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .modern-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: 1px;
+            /* background: conic-gradient(from 180deg at 50% 50%, rgba(2, 6, 23, 0) 0deg, #F5E6A8 360deg);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude; */
+            opacity: 0;
+            transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .modern-card:hover {
+            transform: translateY(-5px);
+            box-shadow:
+                0 10px 30px -10px rgba(245, 230, 168, 0.3),
+                0 0 20px 0 rgba(245, 230, 168, 0.1);
+        }
+
+        .modern-card:hover::before {
+            opacity: 1;
+        }
+
+        /* Glass effect enhancement */
+        .glass-effect {
+            background: rgba(30, 30, 30, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-effect:hover {
+            background: rgba(35, 35, 35, 0.8);
+            border-color: rgba(245, 230, 168, 0.2);
+            box-shadow:
+                0 8px 32px rgba(245, 230, 168, 0.15),
+                0 0 0 1px rgba(245, 230, 168, 0.1);
+        }
+
+        /* Shine effect enhancement */
+        .shine-effect::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg,
+                    transparent 0%,
+                    rgba(255, 255, 255, 0.2) 50%,
+                    transparent 100%);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1;
+        }
+
+        .shine-effect:hover::before {
+            left: 100%;
+        }
+
+        /* Add this to your existing styles */
+        @media (min-width: 768px) {
+            .navbar-width {
+                width: 60%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
