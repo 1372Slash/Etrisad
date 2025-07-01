@@ -21,6 +21,19 @@
             color: #E2E2E2;
         }
 
+          body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image:
+        radial-gradient(circle at 15% 15%, hsla(158, 77%, 20%, 0.2) 0%, transparent 25%),
+        radial-gradient(circle at 85% 85%, hsla(158, 77%, 20%, 0.2) 0%, transparent 30%);
+      z-index: -1;
+    }
+
         #animated-bg {
             position: fixed;
             top: 0;
@@ -74,7 +87,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.7) 100%);
+            background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.534) 100%);
             border-radius: inherit;
             z-index: 1;
         }
