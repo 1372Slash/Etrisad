@@ -2,6 +2,7 @@
 <html lang="id" class="scroll-smooth">
 
 <head>
+    <base href="../Etrisad/">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etrisad - Kreatifitas, Selamanya</title>
@@ -11,8 +12,8 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <!-- Modern Font (Geist Sans) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/geist-sans@5.0.3/css/all.min.css">
-    <link rel="icon" type="image/png" href="assets/images/etrisad_icon.png">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/png" href="../assets/images/etrisad_icon.png">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <script>
         tailwind.config = {
             theme: {
@@ -56,12 +57,12 @@
     <style>
         @font-face {
             font-family: Ribes;
-            src: url(assets/fonts/Ribes-Regular.otf);
+            src: url(../assets/fonts/Ribes-Regular.otf);
         }
 
         @font-face {
             font-family: Parkinsans;
-            src: url(assets/fonts/Parkinsans-Regular.ttf);
+            src: url(../assets/fonts/Parkinsans-Regular.ttf);
         }
 
         .font-nauryz {
@@ -87,7 +88,7 @@
         class="fixed top-4 right-4 bottom-4 w-[calc(100%-2rem)] max-w-sm bg-brand-gray/80 backdrop-blur-2xl shadow-2xl z-50 lg:hidden rounded-2xl border border-white/10 hidden">
         <div class="flex flex-col h-full p-6">
             <div class="flex justify-between items-center mb-10">
-                <a href="#home"><img src="assets/images/etrisad_long.png" alt="Etrisad Logo" class="h-auto w-32"></a>
+                <a href="#home"><img src="../assets/images/etrisad_long.png" alt="Etrisad Logo" class="h-auto w-32"></a>
                 <button id="close-menu-btn" class="p-2">
                     <svg class="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
@@ -139,179 +140,83 @@
     <main>
         <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
             <div class="container mx-auto px-6 text-center relative z-10 flex flex-col items-center">
-                <img src="assets/images/etrisad_long.png" alt="Etrisad Logo" class="h-20 w-auto mb-6">
-                <h1 class="text-5xl md:text-7xl font-bold mb-6 gradient-text tracking-tighter font-nauryz">Kreatifitas,
-                    Selamanya
+                <img src="../assets/images/etrisad_long.png" alt="Etrisad Logo" class="h-20 w-auto mb-6">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 gradient-text tracking-tighter font-nauryz">Sharrow
                 </h1>
                 <p class="text-lg md:text-xl mb-10 max-w-3xl mx-auto text-gray-400 leading-relaxed">Menemukan konten
                     unik dan kreatif dari setiap divisi kami, serta informasi detail tentang aktivitas kami.</p>
                 <!-- Home section button -->
                 <div class="flex gap-4">
                     <a href="#divisi" class="btn-accent px-8 py-3 rounded-full font-semibold text-base glow-on-hover">
-                        Jelajahi Divisi
+                        Mulai Baca
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- Berita Section -->
-        <section id="berita" class="py-24 px-6 fade-in-section">
-            <div class="container mx-auto max-w-4xl">
-                <h2 class="text-4xl font-bold text-center mb-4 gradient-text tracking-tighter font-nauryz">Papan Berita
-                </h2>
-                <p class="text-lg text-gray-400 text-center mb-12">Inovasi terbaru dari tim kami.</p>
-                <div class="glass-effect p-8 rounded-2xl card-hover container-hover shine-effect">
-                    <h3 class="text-2xl font-bold mb-4 text-gray-100 font-nauryz">Peluncuran Proyek Baru</h3>
-                    <p class="text-gray-400 mb-6">Tim kreatif kami telah merilis inovasi terbaru yang menggabungkan
-                        teknologi dan seni dalam satu platform terintegrasi.</p>
-                    <a href="#" class="text-accent hover:text-yellow-200 font-semibold flex items-center gap-2">
-                        Baca Selengkapnya <span class="material-symbols-outlined">arrow_forward</span>
-                    </a>
+        <!-- Section: Sharrow -->
+<section id="sharrow" class="py-24 px-6 fade-in-section">
+    <div class="container mx-auto max-w-4xl glass-effect p-8 rounded-2xl card-hover container-hover shine-effect">
+        <div class="flex flex-col md:flex-row gap-8 items-start">
+            <div class="flex-1">
+                <h2 class="text-4xl font-bold mb-2 gradient-text tracking-tighter font-nauryz">Sharrow</h2>
+                <div class="flex items-center gap-3 mb-4 text-gray-400 text-sm">
+                    <span>2023</span>
+                    <span>•</span>
+                    <span>Novel</span>
+                    <span>•</span>
+                    <span>12 Bab</span>
+                    <span>•</span>
+                    <span>Mystery, Drama</span>
+                </div>
+                <h3 class="text-lg font-semibold mb-2 text-accent">Sinopsis</h3>
+                <p class="text-gray-300 mb-6 leading-relaxed">
+                    Setelah menemukan surat misterius di depan pintunya, aku terjebak di lorong yang gelap dan misterius. Surat itu tidak berisi apapun, hanya surat kosong. Namun, lorong ini seperti menggangu pikiran ku dan bermain-main dengan itu. Tanpa ada petunjuk aku harus menyusuri lorong ini walau bertemu dengan halangan-halangan didepan. Waktu terus berjalan, dan ada kehadiran tak terlihat yang mengintai di setiap sudut. Kini, aku harus menggunakan kecerdikan, keberanian, dan menemukan jawaban untuk keluar dari sini.
+                </p>
+                <div class="mb-6">
+                    <h4 class="font-semibold text-accent mb-2">Daftar Isi</h4>
+                    <ul class="list-disc list-inside text-gray-300 space-y-1">
+                        <li><span class="font-bold">Act 1 :</span> Surat <span class="text-xs text-gray-400 ml-2">May 18, 2023</span></li>
+                        <li><span class="font-bold">Act 2 :</span> Lorong <span class="text-xs text-gray-400 ml-2">May 19, 2023</span></li>
+                        <li><span class="font-bold">Act 3 :</span> Desa <span class="text-xs text-gray-400 ml-2">May 22, 2023</span></li>
+                        <li><span class="font-bold">Act 4 :</span> SIsi <span class="text-xs text-gray-400 ml-2">May 23, 2023</span></li>
+                        <li><span class="font-bold">Act 5 :</span> Museum <span class="text-xs text-gray-400 ml-2">May 24, 2023</span></li>
+                    </ul>
+                </div>
+                <div class="mb-6">
+                    <h4 class="font-semibold text-accent mb-2">Terkait</h4>
+                    <ul class="list-disc list-inside text-gray-300 space-y-1">
+                        <li>Side Story : Altan</li>
+                        <li>Adaptasi Musik : <span class="italic">Sounds Like A ""</span></li>
+                    </ul>
                 </div>
             </div>
-        </section>
+            <div class="w-full md:w-64 flex-shrink-0 bg-brand-gray/70 rounded-xl p-6 border border-white/10">
+                <h4 class="font-semibold text-accent mb-3">Informasi</h4>
+                <ul class="text-gray-300 text-sm space-y-2">
+                    <li><span class="font-bold">Tipe:</span> Novel</li>
+                    <li><span class="font-bold">Bab:</span> 12</li>
+                    <li><span class="font-bold">Total Kata:</span> &gt;1000 Kata</li>
+                    <li><span class="font-bold">Status:</span> <span class="text-yellow-300">Currently Publishing</span></li>
+                    <li><span class="font-bold">Terbit:</span> May 18, 2023 sampai -</li>
+                    <li><span class="font-bold">Perdana:</span> Spring 2023</li>
+                    <li><span class="font-bold">Genres:</span> Mystery, Drama</li>
+                    <li><span class="font-bold">Rating:</span> PG-13 - Teens 13 or older</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
 
-        <!-- Divisi Section -->
-        <section id="divisi" class="py-24 px-6 fade-in-section">
-            <div class="container mx-auto max-w-7xl">
-                <h2 class="text-4xl font-bold text-center mb-4 gradient-text tracking-tighter font-nauryz">Divisi Kami
-                </h2>
-                <p class="text-lg text-gray-400 text-center mb-12">Pilar kreatifitas di Etrisad.</p>
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mb-12">
-                    <!-- Untuk 1372slash -->
-                    <div
-                        class="glass-effect cursor-pointer rounded-2xl overflow-hidden card-hover container-hover shine-effect">
-                        <div class="gradient-overlay relative w-full aspect-square flex items-end p-5"
-                            style="background-image: url('https://drive.google.com/thumbnail?id=1HxtGuccHKeTYR794mC9oWGVar5z8QzP-&sz=w1000'); background-size: cover; background-position: center;">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                            <h3 class="text-xl font-bold text-white relative z-10 font-nauryz">1372slash</h3>
-                        </div>
-                    </div>
-                    <div
-                        class="glass-effect cursor-pointer rounded-2xl overflow-hidden card-hover container-hover shine-effect">
-                        <div class="gradient-overlay relative w-full aspect-square flex items-end p-5"
-                            style="background-image: url('https://drive.google.com/thumbnail?id=1I-V6-qg42Zv2-Adnlvr1jbyiJl3INE5U&sz=w1000'); background-size: cover; background-position: center;">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                            <h3 class="text-xl font-bold text-white relative z-10 font-nauryz">Azure</h3>
-                        </div>
-                    </div>
-                    <div
-                        class="glass-effect cursor-pointer rounded-2xl overflow-hidden card-hover container-hover shine-effect">
-                        <div class="gradient-overlay relative w-full aspect-square flex items-end p-5"
-                            style="background-image: url('https://drive.google.com/thumbnail?id=1IAvg_YWZLu1B_LPfkb34vIgkg9tKn5PD&sz=w1000'); background-size: cover; background-position: center;">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                            <h3 class="text-xl font-bold text-white relative z-10 font-nauryz">AudioResult</h3>
-                        </div>
-                    </div>
-                    <div
-                        class="glass-effect cursor-pointer rounded-2xl overflow-hidden card-hover container-hover shine-effect">
-                        <div class="gradient-overlay relative w-full aspect-square flex items-end p-5"
-                            style="background-image: url('https://drive.google.com/thumbnail?id=1I0R-p0OQ7hmvz5gc-x4pkHCXSMpBbLEZ&sz=w1000'); background-size: cover; background-position: center;">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                            <h3 class="text-xl font-bold text-white relative z-10 font-nauryz">Bayu Prana</h3>
-                        </div>
-                    </div>
-                    <div
-                        class="glass-effect cursor-pointer rounded-2xl overflow-hidden card-hover container-hover shine-effect">
-                        <div class="gradient-overlay relative w-full aspect-square flex items-end p-5"
-                            style="background-image: url('https://drive.google.com/thumbnail?id=1IPEt6ZAmGCyrfr6b1tiJ-31AI0KqRPTv&sz=w1000'); background-size: cover; background-position: center;">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                            <h3 class="text-xl font-bold text-white relative z-10 font-nauryz">OpenStudio</h3>
-                        </div>
-                    </div>
-                    <div
-                        class="glass-effect cursor-pointer rounded-2xl overflow-hidden card-hover container-hover shine-effect">
-                        <div class="gradient-overlay relative w-full aspect-square flex items-end p-5"
-                            style="background-image: url('https://drive.google.com/thumbnail?id=1IQdL2pMCoj9l_eeyKQyr3Y94Ddom1fv2&sz=w1000'); background-size: cover; background-position: center;">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                            <h3 class="text-xl font-bold text-white relative z-10 font-nauryz">GlideFrame</h3>
-                        </div>
-                    </div>
-                </div>
-                <!-- Divisi section button -->
-                <div class="text-center mt-12">
-                    <a href="divisi.html"
-                        class="btn-accent inline-flex items-center gap-2 px-8 py-3 rounded-full font-semibold text-base glow-on-hover">
-                        Lihat Semua Divisi
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Video Section -->
-        <section id="video" class="py-24 px-6 fade-in-section">
-            <div class="container mx-auto max-w-7xl">
-                <h2 class="text-4xl font-bold text-center mb-4 gradient-text tracking-tighter font-nauryz">Video Terbaru
-                </h2>
-                <p class="text-lg text-gray-400 text-center mb-12">Karya visual dari tim kami.</p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Last Video -->
-                    <div class="glass-effect p-8 rounded-2xl card-hover container-hover shine-effect">
-                        <h3 class="text-xl font-bold text-gray-100 font-nauryz mb-6">Last Video</h3>
-                        <div class="aspect-video bg-black/40 rounded-lg relative overflow-hidden mb-6">
-                            <iframe class="w-full h-full absolute inset-0"
-                                src="https://www.youtube-nocookie.com/embed/videoseries?list=PLEXbubK1RLvXbUmwg2vaKZrjotvzeHT7W"
-                                title="YouTube video player" loading="lazy"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen>
-                            </iframe>
-                        </div>
-                        <button class="w-full btn-accent py-3 rounded-full font-semibold glow-on-hover shine-effect">
-                            Lihat Semua Video
-                        </button>
-                    </div>
-                    <!-- Motion Journey -->
-                    <div class="glass-effect p-8 rounded-2xl card-hover container-hover shine-effect">
-                        <h3 class="text-xl font-bold text-gray-100 font-nauryz mb-6">Motion Journey</h3>
-                        <div class="aspect-video bg-black/40 rounded-lg relative overflow-hidden mb-6">
-                            <iframe class="w-full h-full absolute inset-0"
-                                src="https://www.youtube-nocookie.com/embed/videoseries?list=PLEXbubK1RLvX5fN7msBJx4jXQdgDY6efA"
-                                title="YouTube video player" loading="lazy"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen>
-                            </iframe>
-                        </div>
-                        <button class="w-full btn-accent py-3 rounded-full font-semibold glow-on-hover shine-effect">
-                            Jelajahi Motion
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Era Section -->
-        <section id="era" class="py-24 px-6 fade-in-section">
-            <div class="container mx-auto max-w-5xl">
-                <h2 class="text-4xl font-bold text-center mb-4 gradient-text tracking-tighter font-nauryz">Era Terkini
-                </h2>
-                <p class="text-lg text-gray-400 text-center mb-12">Fase terbaru dalam perjalanan kami.</p>
-                <div class="glass-effect p-8 rounded-2xl card-hover container-hover shine-effect">
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                        <div>
-                            <h3 class="text-4xl font-bold mb-4 gradient-text tracking-tight font-nauryz">Sunny Side</h3>
-                            <p class="text-2xl text-gray-400 mb-8">June 12 25 - Sekarang</p>
-                            <!-- Era section button -->
-                            <button class="btn-accent px-8 py-3 rounded-full font-semibold text-base glow-on-hover">
-                                Jelajahi Era Ini
-                            </button>
-                        </div>
-                        <div class="relative flex items-center justify-center min-h-[200px]">
-                            <div class="absolute w-full h-full bg-secondary rounded-full blur-3xl opacity-40"></div>
-                            <span class="material-symbols-outlined text-9xl text-accent relative">flare</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
-    <footer id="footer" class="py-20 px-6 mt-24 border-t border-white/10">
+    <footer id="about" class="py-20 px-6 mt-24 border-t border-white/10">
 
     </footer>
 
     <script>
 
         const nav = document.getElementById('navbar');
-        fetch('nav.html')
+        fetch('../nav.html')
             .then(response => response.text())
             .then(data => {
                 nav.innerHTML = data;
@@ -344,8 +249,8 @@
             })
             .catch(error => console.error('Error loading navbar:', error));
 
-        const footer = document.getElementById('footer');
-        fetch('footer.html')
+        const footer = document.getElementById('about');
+        fetch('../footer.html')
             .then(response => response.text())
             .then(data => {
                 footer.innerHTML = data;
