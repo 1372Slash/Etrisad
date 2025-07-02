@@ -379,14 +379,7 @@ body::before {
   left: 100%;
 }
 
-/* Add this to your existing styles */
-@media (min-width: 768px) {
-  .navbar-width {
-    width: 60%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
+/* Removed custom navbar width for balanced layout */
 
 #navbar-container {
   border: 1px solid transparent;

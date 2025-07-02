@@ -186,8 +186,9 @@
         </section>
 
     </main>
-    <footer id="about" class="py-20 px-6 mt-24 border-t border-white/10">
-
+    <footer id="about" class="py-20 px-6 mt-24 border-t border-white/10 lg:flex lg:justify-center lg:items-center lg:space-x-6">
+        <div class="lg:max-w-4xl lg:w-full">
+        </div>
     </footer>
 
     <script>
@@ -206,7 +207,8 @@
         fetch('footer.html')
             .then(response => response.text())
             .then(data => {
-                footer.innerHTML = data;
+                const footerContainer = footer.querySelector('div');
+                footerContainer.innerHTML = data;
             })
             .catch(error => console.error('Error loading footer:', error));
 
