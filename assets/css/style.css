@@ -168,12 +168,14 @@ body::before {
 }
 
 .fade-in-section {
-  opacity: 0;
-  transition: opacity 0.8s ease-out;
+  opacity: 0; /* Initial state: invisible */
+  transform: translateY(20px); /* Initial state: slightly moved down */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Smooth transition */
 }
 
 .fade-in-section.is-visible {
-  opacity: 1;
+  opacity: 1; /* Final state: visible */
+  transform: translateY(0); /* Final state: original position */
 }
 
 .shine-effect {
