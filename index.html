@@ -82,7 +82,7 @@
     </header>
 
     <!-- Off-canvas Mobile Menu -->
-    <div id="menu-overlay" class="fixed inset-0 bg-black/60 z-40 hidden lg:hidden"></div>
+    <div id="sidebar"></div>
 
     <main>
         <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
@@ -252,7 +252,8 @@
             </div>
         </section>
     </main>
-    <footer id="footer" class="lg:pl-20 py-20 px-6 mt-24 border-t border-white/10 lg:flex lg:justify-center lg:items-center lg:space-x-6">
+    <footer id="footer"
+        class="lg:pl-20 py-20 px-6 mt-24 border-t border-white/10 lg:flex lg:justify-center lg:items-center lg:space-x-6">
     </footer>
 
     <script>
@@ -299,11 +300,37 @@
             })
             .catch(error => console.error('Error loading footer:', error));
 
-        const sidebar = document.getElementById('menu-overlay');
+        const sidebar = document.getElementById('sidebar');
         fetch('sidebar.html')
-            .then(response => rrespons.text())
+            .then(response => response.text())
             .then(data => {
                 sidebar.innerHTML = data;
+                // Inisialisasi tombol menu, close, dsb di sini
+                const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+                const closeMenuBtn = document.getElementById('close-menu-btn');
+                const mobileMenuPanel = document.getElementById('mobile-menu-panel');
+                const menuOverlay = document.getElementById('menu-overlay');
+                const body = document.body;
+
+                // ...event listener open/close menu...
+                const openMenu = () => {
+                    mobileMenuPanel.classList.remove('hidden');
+                    mobileMenuPanel.classList.remove('animate-close-menu');
+                    mobileMenuPanel.classList.add('animate-open-menu');
+                    menuOverlay.classList.remove('hidden');
+                    body.classList.add('body-no-scroll');
+                };
+
+                const closeMenu = () => {
+                    mobileMenuPanel.classList.remove('animate-open-menu');
+                    mobileMenuPanel.classList.add('animate-close-menu');
+                    menuOverlay.classList.add('hidden');
+                    body.classList.remove('body-no-scroll');
+                };
+
+                mobileMenuBtn.addEventListener('click', openMenu);
+                closeMenuBtn.addEventListener('click', closeMenu);
+                menuOverlay.addEventListener('click', closeMenu);
             })
             .catch(error => console.error('Error loading sidebar:', error));
 
@@ -334,32 +361,6 @@
                     scrollLogo.style.position = 'absolute';
                 }
             });
-
-            // --- Modern Off-canvas Mobile Menu Logic ---
-            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-            const closeMenuBtn = document.getElementById('close-menu-btn');
-            const mobileMenuPanel = document.getElementById('mobile-menu-panel');
-            const menuOverlay = document.getElementById('menu-overlay');
-            const body = document.body;
-
-            const openMenu = () => {
-                mobileMenuPanel.classList.remove('hidden');
-                mobileMenuPanel.classList.remove('animate-close-menu');
-                mobileMenuPanel.classList.add('animate-open-menu');
-                menuOverlay.classList.remove('hidden');
-                body.classList.add('body-no-scroll');
-            };
-
-            const closeMenu = () => {
-                mobileMenuPanel.classList.remove('animate-open-menu');
-                mobileMenuPanel.classList.add('animate-close-menu');
-                menuOverlay.classList.add('hidden');
-                body.classList.remove('body-no-scroll');
-            };
-
-            mobileMenuBtn.addEventListener('click', openMenu);
-            closeMenuBtn.addEventListener('click', closeMenu);
-            menuOverlay.addEventListener('click', closeMenu);
 
             // --- Smooth scrolling ---
             function scrollToSection(sectionId) {
