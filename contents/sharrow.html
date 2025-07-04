@@ -83,59 +83,7 @@
     </header>
 
     <!-- Off-canvas Mobile Menu -->
-    <div id="menu-overlay" class="fixed inset-0 bg-black/60 z-40 hidden lg:hidden"></div>
-    <div id="mobile-menu-panel"
-        class="fixed top-4 right-4 bottom-4 w-[calc(100%-2rem)] max-w-sm bg-brand-gray/80 backdrop-blur-2xl shadow-2xl z-50 lg:hidden rounded-2xl border border-white/10 hidden">
-        <div class="flex flex-col h-full p-6">
-            <div class="flex justify-between items-center mb-10">
-                <a href="#home"><img src="../assets/images/etrisad_long.png" alt="Etrisad Logo" class="h-auto w-32"></a>
-                <button id="close-menu-btn" class="p-2">
-                    <svg class="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
-                        </path>
-                    </svg>
-                </button>
-            </div>
-            <!-- Mobile Navigation -->
-            <nav class="flex flex-col space-y-2">
-                <a href="index.html"
-                    class="mobile-nav-link text-lg p-3 rounded-lg flex items-center gap-4 text-gray-300 hover:text-white hover:bg-white/5 transition-colors duration-300">
-                    <span class="material-symbols-outlined">home</span>Home
-                </a>
-                <a href="contents.html"
-                    class="mobile-nav-link text-lg p-3 rounded-lg flex items-center gap-4 text-gray-300 hover:text-white hover:bg-white/5 transition-colors duration-300">
-                    <span class="material-symbols-outlined">article</span>Konten
-                </a>
-                <a href="divisi.html"
-                    class="mobile-nav-link text-lg p-3 rounded-lg flex items-center gap-4 text-gray-300 hover:text-white hover:bg-white/5 transition-colors duration-300">
-                    <span class="material-symbols-outlined">hub</span>Divisi
-                </a>
-                <a href="shutdown.html"
-                    class="mobile-nav-link text-lg p-3 rounded-lg flex items-center gap-4 text-gray-300 hover:text-white hover:bg-white/5 transition-colors duration-300">
-                    <span class="material-symbols-outlined">power_settings_new</span>Shutdown
-                </a>
-                <a href="era.html"
-                    class="mobile-nav-link text-lg p-3 rounded-lg flex items-center gap-4 text-gray-300 hover:text-white hover:bg-white/5 transition-colors duration-300">
-                    <span class="material-symbols-outlined">history_toggle_off</span>Era
-                </a>
-                <a href="time-capsule.html"
-                    class="mobile-nav-link text-lg p-3 rounded-lg flex items-center gap-4 text-gray-300 hover:text-white hover:bg-white/5 transition-colors duration-300">
-                    <span class="material-symbols-outlined">timer</span>Time Capsule
-                </a>
-                <a href="lainnya.html"
-                    class="mobile-nav-link text-lg p-3 rounded-lg flex items-center gap-4 text-gray-300 hover:text-white hover:bg-white/5 transition-colors duration-300">
-                    <span class="material-symbols-outlined">more_horiz</span>Lainnya
-                </a>
-                <a href="about.html"
-                    class="mobile-nav-link text-lg p-3 rounded-lg flex items-center gap-4 text-gray-300 hover:text-white hover:bg-white/5 transition-colors duration-300">
-                    <span class="material-symbols-outlined">info</span>About
-                </a>
-            </nav>
-            <div class="mt-auto text-center">
-                <p class="text-xs text-gray-500">Didesain & Dikembangkan oleh Etrisad</p>
-            </div>
-        </div>
-    </div>
+    <div id="sidebar"></div>
 
     <main>
         <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
@@ -155,58 +103,70 @@
         </section>
 
         <!-- Section: Sharrow -->
-<section id="sharrow" class="py-24 px-6 fade-in-section">
-    <div class="container mx-auto max-w-4xl glass-effect p-8 rounded-2xl card-hover container-hover shine-effect">
-        <div class="flex flex-col md:flex-row gap-8 items-start">
-            <div class="flex-1">
-                <h2 class="text-4xl font-bold mb-2 gradient-text tracking-tighter font-nauryz">Sharrow</h2>
-                <div class="flex items-center gap-3 mb-4 text-gray-400 text-sm">
-                    <span>2023</span>
-                    <span>•</span>
-                    <span>Novel</span>
-                    <span>•</span>
-                    <span>12 Bab</span>
-                    <span>•</span>
-                    <span>Mystery, Drama</span>
-                </div>
-                <h3 class="text-lg font-semibold mb-2 text-accent">Sinopsis</h3>
-                <p class="text-gray-300 mb-6 leading-relaxed">
-                    Setelah menemukan surat misterius di depan pintunya, aku terjebak di lorong yang gelap dan misterius. Surat itu tidak berisi apapun, hanya surat kosong. Namun, lorong ini seperti menggangu pikiran ku dan bermain-main dengan itu. Tanpa ada petunjuk aku harus menyusuri lorong ini walau bertemu dengan halangan-halangan didepan. Waktu terus berjalan, dan ada kehadiran tak terlihat yang mengintai di setiap sudut. Kini, aku harus menggunakan kecerdikan, keberanian, dan menemukan jawaban untuk keluar dari sini.
-                </p>
-                <div class="mb-6">
-                    <h4 class="font-semibold text-accent mb-2">Daftar Isi</h4>
-                    <ul class="list-disc list-inside text-gray-300 space-y-1">
-                        <li><span class="font-bold">Act 1 :</span> Surat <span class="text-xs text-gray-400 ml-2">May 18, 2023</span></li>
-                        <li><span class="font-bold">Act 2 :</span> Lorong <span class="text-xs text-gray-400 ml-2">May 19, 2023</span></li>
-                        <li><span class="font-bold">Act 3 :</span> Desa <span class="text-xs text-gray-400 ml-2">May 22, 2023</span></li>
-                        <li><span class="font-bold">Act 4 :</span> SIsi <span class="text-xs text-gray-400 ml-2">May 23, 2023</span></li>
-                        <li><span class="font-bold">Act 5 :</span> Museum <span class="text-xs text-gray-400 ml-2">May 24, 2023</span></li>
-                    </ul>
-                </div>
-                <div class="mb-6">
-                    <h4 class="font-semibold text-accent mb-2">Terkait</h4>
-                    <ul class="list-disc list-inside text-gray-300 space-y-1">
-                        <li>Side Story : Altan</li>
-                        <li>Adaptasi Musik : <span class="italic">Sounds Like A ""</span></li>
-                    </ul>
+        <section id="sharrow" class="py-24 px-6 fade-in-section">
+            <div
+                class="container mx-auto max-w-4xl glass-effect p-8 rounded-2xl card-hover container-hover shine-effect">
+                <div class="flex flex-col md:flex-row gap-8 items-start">
+                    <div class="flex-1">
+                        <h2 class="text-4xl font-bold mb-2 gradient-text tracking-tighter font-nauryz">Sharrow</h2>
+                        <div class="flex items-center gap-3 mb-4 text-gray-400 text-sm">
+                            <span>2023</span>
+                            <span>•</span>
+                            <span>Novel</span>
+                            <span>•</span>
+                            <span>12 Bab</span>
+                            <span>•</span>
+                            <span>Mystery, Drama</span>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2 text-accent">Sinopsis</h3>
+                        <p class="text-gray-300 mb-6 leading-relaxed">
+                            Setelah menemukan surat misterius di depan pintunya, aku terjebak di lorong yang gelap dan
+                            misterius. Surat itu tidak berisi apapun, hanya surat kosong. Namun, lorong ini seperti
+                            menggangu pikiran ku dan bermain-main dengan itu. Tanpa ada petunjuk aku harus menyusuri
+                            lorong ini walau bertemu dengan halangan-halangan didepan. Waktu terus berjalan, dan ada
+                            kehadiran tak terlihat yang mengintai di setiap sudut. Kini, aku harus menggunakan
+                            kecerdikan, keberanian, dan menemukan jawaban untuk keluar dari sini.
+                        </p>
+                        <div class="mb-6">
+                            <h4 class="font-semibold text-accent mb-2">Daftar Isi</h4>
+                            <ul class="list-disc list-inside text-gray-300 space-y-1">
+                                <li><span class="font-bold">Act 1 :</span> Surat <span
+                                        class="text-xs text-gray-400 ml-2">May 18, 2023</span></li>
+                                <li><span class="font-bold">Act 2 :</span> Lorong <span
+                                        class="text-xs text-gray-400 ml-2">May 19, 2023</span></li>
+                                <li><span class="font-bold">Act 3 :</span> Desa <span
+                                        class="text-xs text-gray-400 ml-2">May 22, 2023</span></li>
+                                <li><span class="font-bold">Act 4 :</span> SIsi <span
+                                        class="text-xs text-gray-400 ml-2">May 23, 2023</span></li>
+                                <li><span class="font-bold">Act 5 :</span> Museum <span
+                                        class="text-xs text-gray-400 ml-2">May 24, 2023</span></li>
+                            </ul>
+                        </div>
+                        <div class="mb-6">
+                            <h4 class="font-semibold text-accent mb-2">Terkait</h4>
+                            <ul class="list-disc list-inside text-gray-300 space-y-1">
+                                <li>Side Story : Altan</li>
+                                <li>Adaptasi Musik : <span class="italic">Sounds Like A ""</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-64 flex-shrink-0 bg-brand-gray/70 rounded-xl p-6 border border-white/10">
+                        <h4 class="font-semibold text-accent mb-3">Informasi</h4>
+                        <ul class="text-gray-300 text-sm space-y-2">
+                            <li><span class="font-bold">Tipe:</span> Novel</li>
+                            <li><span class="font-bold">Bab:</span> 12</li>
+                            <li><span class="font-bold">Total Kata:</span> &gt;1000 Kata</li>
+                            <li><span class="font-bold">Status:</span> <span class="text-yellow-300">Currently
+                                    Publishing</span></li>
+                            <li><span class="font-bold">Terbit:</span> May 18, 2023 sampai -</li>
+                            <li><span class="font-bold">Perdana:</span> Spring 2023</li>
+                            <li><span class="font-bold">Genres:</span> Mystery, Drama</li>
+                            <li><span class="font-bold">Rating:</span> PG-13 - Teens 13 or older</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-            <div class="w-full md:w-64 flex-shrink-0 bg-brand-gray/70 rounded-xl p-6 border border-white/10">
-                <h4 class="font-semibold text-accent mb-3">Informasi</h4>
-                <ul class="text-gray-300 text-sm space-y-2">
-                    <li><span class="font-bold">Tipe:</span> Novel</li>
-                    <li><span class="font-bold">Bab:</span> 12</li>
-                    <li><span class="font-bold">Total Kata:</span> &gt;1000 Kata</li>
-                    <li><span class="font-bold">Status:</span> <span class="text-yellow-300">Currently Publishing</span></li>
-                    <li><span class="font-bold">Terbit:</span> May 18, 2023 sampai -</li>
-                    <li><span class="font-bold">Perdana:</span> Spring 2023</li>
-                    <li><span class="font-bold">Genres:</span> Mystery, Drama</li>
-                    <li><span class="font-bold">Rating:</span> PG-13 - Teens 13 or older</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
+        </section>
 
     </main>
     <footer id="about" class="py-20 px-6 mt-24 border-t border-white/10">
@@ -214,23 +174,82 @@
     </footer>
 
     <script>
-  // Load navbar and footer first
-  const nav = document.getElementById('navbar');
-        fetch('../nav.html')
+        // Load navbar and footer first
+        const nav = document.getElementById('navbar');
+        fetch('nav.html')
             .then(response => response.text())
             .then(data => {
                 nav.innerHTML = data;
-                initializePageLogic(); // Initialize after navbar is loaded
+
+                // Pindahkan event scroll ke sini
+                window.addEventListener('scroll', function () {
+                    const navbar = document.getElementById('navbar');
+                    const navbarContainer = navbar.querySelector('div');
+                    const mainLogo = document.getElementById('main-logo');
+                    const scrollLogo = document.getElementById('scroll-logo');
+
+                    if (!navbarContainer || !mainLogo || !scrollLogo) return;
+
+                    if (window.scrollY > 50) {
+                        navbar.classList.add('p-3');
+                        navbarContainer.classList.add('pill-navbar', 'rounded-full');
+                        mainLogo.style.opacity = '0';
+                        scrollLogo.style.opacity = '1';
+                        scrollLogo.style.position = 'static';
+                        mainLogo.style.position = 'absolute';
+                    } else {
+                        navbar.classList.remove('p-3');
+                        navbarContainer.classList.remove('pill-navbar', 'rounded-full');
+                        mainLogo.style.opacity = '1';
+                        scrollLogo.style.opacity = '0';
+                        mainLogo.style.position = 'static';
+                        scrollLogo.style.position = 'absolute';
+                    }
+                });
             })
             .catch(error => console.error('Error loading navbar:', error));
 
-        const footer = document.getElementById('about');
-        fetch('../footer.html')
+        const footer = document.getElementById('footer');
+        fetch('footer.html')
             .then(response => response.text())
             .then(data => {
                 footer.innerHTML = data;
             })
             .catch(error => console.error('Error loading footer:', error));
+
+        const sidebar = document.getElementById('sidebar');
+        fetch('sidebar.html')
+            .then(response => response.text())
+            .then(data => {
+                sidebar.innerHTML = data;
+                // Inisialisasi tombol menu, close, dsb di sini
+                const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+                const closeMenuBtn = document.getElementById('close-menu-btn');
+                const mobileMenuPanel = document.getElementById('mobile-menu-panel');
+                const menuOverlay = document.getElementById('menu-overlay');
+                const body = document.body;
+
+                // ...event listener open/close menu...
+                const openMenu = () => {
+                    mobileMenuPanel.classList.remove('hidden');
+                    mobileMenuPanel.classList.remove('animate-close-menu');
+                    mobileMenuPanel.classList.add('animate-open-menu');
+                    menuOverlay.classList.remove('hidden');
+                    body.classList.add('body-no-scroll');
+                };
+
+                const closeMenu = () => {
+                    mobileMenuPanel.classList.remove('animate-open-menu');
+                    mobileMenuPanel.classList.add('animate-close-menu');
+                    menuOverlay.classList.add('hidden');
+                    body.classList.remove('body-no-scroll');
+                };
+
+                mobileMenuBtn.addEventListener('click', openMenu);
+                closeMenuBtn.addEventListener('click', closeMenu);
+                menuOverlay.addEventListener('click', closeMenu);
+            })
+            .catch(error => console.error('Error loading sidebar:', error));
 
         function initializePageLogic() {
             // --- Navbar scroll effect ---
@@ -312,7 +331,7 @@
 
             // --- Scroll-triggered Fade-in Animation ---
             const fadeInSections = document.querySelectorAll('.fade-in-section');
-            
+
             // Immediately show sections that are already visible
             fadeInSections.forEach(section => {
                 section.classList.add('is-visible');
