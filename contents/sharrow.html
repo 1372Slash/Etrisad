@@ -176,41 +176,16 @@
     <script>
         // Load navbar and footer first
         const nav = document.getElementById('navbar');
-        fetch('nav.html')
+        fetch('../nav.html')
             .then(response => response.text())
             .then(data => {
                 nav.innerHTML = data;
-
-                // Pindahkan event scroll ke sini
-                window.addEventListener('scroll', function () {
-                    const navbar = document.getElementById('navbar');
-                    const navbarContainer = navbar.querySelector('div');
-                    const mainLogo = document.getElementById('main-logo');
-                    const scrollLogo = document.getElementById('scroll-logo');
-
-                    if (!navbarContainer || !mainLogo || !scrollLogo) return;
-
-                    if (window.scrollY > 50) {
-                        navbar.classList.add('p-3');
-                        navbarContainer.classList.add('pill-navbar', 'rounded-full');
-                        mainLogo.style.opacity = '0';
-                        scrollLogo.style.opacity = '1';
-                        scrollLogo.style.position = 'static';
-                        mainLogo.style.position = 'absolute';
-                    } else {
-                        navbar.classList.remove('p-3');
-                        navbarContainer.classList.remove('pill-navbar', 'rounded-full');
-                        mainLogo.style.opacity = '1';
-                        scrollLogo.style.opacity = '0';
-                        mainLogo.style.position = 'static';
-                        scrollLogo.style.position = 'absolute';
-                    }
-                });
+                initializePageLogic(); // Initialize after navbar is loaded
             })
             .catch(error => console.error('Error loading navbar:', error));
 
-        const footer = document.getElementById('footer');
-        fetch('footer.html')
+        const footer = document.getElementById('about');
+        fetch('../footer.html')
             .then(response => response.text())
             .then(data => {
                 footer.innerHTML = data;
@@ -218,7 +193,7 @@
             .catch(error => console.error('Error loading footer:', error));
 
         const sidebar = document.getElementById('sidebar');
-        fetch('sidebar.html')
+        fetch('../sidebar.html')
             .then(response => response.text())
             .then(data => {
                 sidebar.innerHTML = data;
