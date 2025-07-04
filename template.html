@@ -85,103 +85,163 @@
     <div id="sidebar" class="lg:hidden">
         <!-- Mobile menu will be loaded here -->
 
-    <main>
-        <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
-            <div class="container mx-auto px-6 text-center relative z-10 flex flex-col items-center">
-                <img src="assets/images/etrisad_long.png" alt="Etrisad Logo" class="h-20 w-auto mb-6">
-                <h1 class="text-5xl md:text-7xl font-bold mb-6 gradient-text tracking-tighter font-nauryz">Kreatifitas,
-                    Selamanya
-                </h1>
-                <p class="text-lg md:text-xl mb-10 max-w-3xl mx-auto text-gray-400 leading-relaxed">Menemukan konten
-                    unik dan kreatif dari setiap divisi kami, serta informasi detail tentang aktivitas kami.</p>
-                <!-- Home section button -->
-                <div class="flex gap-4">
-                    <a href="#divisi" class="btn-accent px-8 py-3 rounded-full font-semibold text-base glow-on-hover">
-                        Jelajahi Divisi
-                    </a>
+        <main>
+            <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+                <div class="container mx-auto px-6 text-center relative z-10 flex flex-col items-center">
+                    <img src="assets/images/etrisad_long.png" alt="Etrisad Logo" class="h-20 w-auto mb-6">
+                    <h1 class="text-5xl md:text-7xl font-bold mb-6 gradient-text tracking-tighter font-nauryz">
+                        Kreatifitas,
+                        Selamanya
+                    </h1>
+                    <p class="text-lg md:text-xl mb-10 max-w-3xl mx-auto text-gray-400 leading-relaxed">Menemukan konten
+                        unik dan kreatif dari setiap divisi kami, serta informasi detail tentang aktivitas kami.</p>
+                    <!-- Home section button -->
+                    <div class="flex gap-4">
+                        <a href="#divisi"
+                            class="btn-accent px-8 py-3 rounded-full font-semibold text-base glow-on-hover">
+                            Jelajahi Divisi
+                        </a>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Berita Section -->
-        <section id="berita" class="py-24 px-6 fade-in-section">
-            <div class="container mx-auto max-w-4xl">
-                <h2 class="text-4xl font-bold text-center mb-4 gradient-text tracking-tighter font-nauryz">Papan Berita
-                </h2>
-                <p class="text-lg text-gray-400 text-center mb-12">Inovasi terbaru dari tim kami.</p>
-                <div class="glass-effect p-8 rounded-2xl card-hover container-hover shine-effect">
-                    <h3 class="text-2xl font-bold mb-4 text-gray-100 font-nauryz">Peluncuran Proyek Baru</h3>
-                    <p class="text-gray-400 mb-6">Tim kreatif kami telah merilis inovasi terbaru yang menggabungkan
-                        teknologi dan seni dalam satu platform terintegrasi.</p>
-                    <a href="#" class="text-accent hover:text-yellow-200 font-semibold flex items-center gap-2">
-                        Baca Selengkapnya <span class="material-symbols-outlined">arrow_forward</span>
-                    </a>
+            <!-- Berita Section -->
+            <section id="berita" class="py-24 px-6 fade-in-section">
+                <div class="container mx-auto max-w-4xl">
+                    <h2 class="text-4xl font-bold text-center mb-4 gradient-text tracking-tighter font-nauryz">Papan
+                        Berita
+                    </h2>
+                    <p class="text-lg text-gray-400 text-center mb-12">Inovasi terbaru dari tim kami.</p>
+                    <div class="glass-effect p-8 rounded-2xl card-hover container-hover shine-effect">
+                        <h3 class="text-2xl font-bold mb-4 text-gray-100 font-nauryz">Peluncuran Proyek Baru</h3>
+                        <p class="text-gray-400 mb-6">Tim kreatif kami telah merilis inovasi terbaru yang menggabungkan
+                            teknologi dan seni dalam satu platform terintegrasi.</p>
+                        <a href="#" class="text-accent hover:text-yellow-200 font-semibold flex items-center gap-2">
+                            Baca Selengkapnya <span class="material-symbols-outlined">arrow_forward</span>
+                        </a>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-    </main>
-    <footer id="about" class="py-20 px-6 mt-24 border-t border-white/10">
+        </main>
+        <footer id="footer"
+            class="lg:pl-20 py-20 px-6 mt-24 border-t border-white/10 lg:flex lg:justify-center lg:items-center lg:space-x-6">
+        </footer>
 
-    </footer>
+        <script>
 
-    <script>
+            const nav = document.getElementById('navbar');
+            fetch('nav.html')
+                .then(response => response.text())
+                .then(data => {
+                    nav.innerHTML = data;
 
-        const nav = document.getElementById('navbar');
-        fetch('nav.html')
-            .then(response => response.text())
-            .then(data => {
-                nav.innerHTML = data;
+                    // Pindahkan event scroll ke sini
+                    window.addEventListener('scroll', function () {
+                        const navbar = document.getElementById('navbar');
+                        const navbarContainer = navbar.querySelector('div');
+                        const mainLogo = document.getElementById('main-logo');
+                        const scrollLogo = document.getElementById('scroll-logo');
 
-                // Pindahkan event scroll ke sini
+                        if (!navbarContainer || !mainLogo || !scrollLogo) return;
+
+                        if (window.scrollY > 50) {
+                            navbar.classList.add('p-3');
+                            navbarContainer.classList.add('pill-navbar', 'rounded-full');
+                            mainLogo.style.opacity = '0';
+                            scrollLogo.style.opacity = '1';
+                            scrollLogo.style.position = 'static';
+                            mainLogo.style.position = 'absolute';
+                        } else {
+                            navbar.classList.remove('p-3');
+                            navbarContainer.classList.remove('pill-navbar', 'rounded-full');
+                            mainLogo.style.opacity = '1';
+                            scrollLogo.style.opacity = '0';
+                            mainLogo.style.position = 'static';
+                            scrollLogo.style.position = 'absolute';
+                        }
+                    });
+                })
+                .catch(error => console.error('Error loading navbar:', error));
+
+            const footer = document.getElementById('footer');
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    footer.innerHTML = data;
+                })
+                .catch(error => console.error('Error loading footer:', error));
+
+            const sidebar = document.getElementById('sidebar');
+            fetch('sidebar.html')
+                .then(response => response.text())
+                .then(data => {
+                    sidebar.innerHTML = data;
+                    // Inisialisasi tombol menu, close, dsb di sini
+                    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+                    const closeMenuBtn = document.getElementById('close-menu-btn');
+                    const mobileMenuPanel = document.getElementById('mobile-menu-panel');
+                    const menuOverlay = document.getElementById('menu-overlay');
+                    const body = document.body;
+
+                    // ...event listener open/close menu...
+                    const openMenu = () => {
+                        mobileMenuPanel.classList.remove('hidden');
+                        mobileMenuPanel.classList.remove('animate-close-menu');
+                        mobileMenuPanel.classList.add('animate-open-menu');
+                        menuOverlay.classList.remove('hidden');
+                        body.classList.add('body-no-scroll');
+                    };
+
+                    const closeMenu = () => {
+                        mobileMenuPanel.classList.remove('animate-open-menu');
+                        mobileMenuPanel.classList.add('animate-close-menu');
+                        menuOverlay.classList.add('hidden');
+                        body.classList.remove('body-no-scroll');
+                    };
+
+                    mobileMenuBtn.addEventListener('click', openMenu);
+                    closeMenuBtn.addEventListener('click', closeMenu);
+                    menuOverlay.addEventListener('click', closeMenu);
+                })
+                .catch(error => console.error('Error loading sidebar:', error));
+
+
+            // Wrap all logic in a load event listener
+            window.addEventListener('load', () => {
+                // --- Navbar scroll effect ---
                 window.addEventListener('scroll', function () {
                     const navbar = document.getElementById('navbar');
                     const navbarContainer = navbar.querySelector('div');
                     const mainLogo = document.getElementById('main-logo');
                     const scrollLogo = document.getElementById('scroll-logo');
 
-                    if (!navbarContainer || !mainLogo || !scrollLogo) return;
-
                     if (window.scrollY > 50) {
                         navbar.classList.add('p-3');
-                        navbarContainer.classList.add('pill-navbar', 'rounded-full');
+                        navbarContainer.classList.add('pill-navbar', 'rounded-full', 'border-white/10');
+                        navbarContainer.classList.remove('rounded-xl', 'border-transparent');
                         mainLogo.style.opacity = '0';
                         scrollLogo.style.opacity = '1';
                         scrollLogo.style.position = 'static';
                         mainLogo.style.position = 'absolute';
                     } else {
                         navbar.classList.remove('p-3');
-                        navbarContainer.classList.remove('pill-navbar', 'rounded-full');
+                        navbarContainer.classList.remove('pill-navbar', 'rounded-full', 'border-white/10');
+                        navbarContainer.classList.add('rounded-xl', 'border-transparent');
                         mainLogo.style.opacity = '1';
                         scrollLogo.style.opacity = '0';
                         mainLogo.style.position = 'static';
                         scrollLogo.style.position = 'absolute';
                     }
                 });
-            })
-            .catch(error => console.error('Error loading navbar:', error));
 
-        const footer = document.getElementById('footer');
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(data => {
-                footer.innerHTML = data;
-            })
-            .catch(error => console.error('Error loading footer:', error));
-
-        const sidebar = document.getElementById('sidebar');
-        fetch('sidebar.html')
-            .then(response => response.text())
-            .then(data => {
-                sidebar.innerHTML = data;
-                // Inisialisasi tombol menu, close, dsb di sini
+                // --- Modern Off-canvas Mobile Menu Logic ---
                 const mobileMenuBtn = document.getElementById('mobile-menu-btn');
                 const closeMenuBtn = document.getElementById('close-menu-btn');
                 const mobileMenuPanel = document.getElementById('mobile-menu-panel');
                 const menuOverlay = document.getElementById('menu-overlay');
                 const body = document.body;
 
-                // ...event listener open/close menu...
                 const openMenu = () => {
                     mobileMenuPanel.classList.remove('hidden');
                     mobileMenuPanel.classList.remove('animate-close-menu');
@@ -200,115 +260,58 @@
                 mobileMenuBtn.addEventListener('click', openMenu);
                 closeMenuBtn.addEventListener('click', closeMenu);
                 menuOverlay.addEventListener('click', closeMenu);
-            })
-            .catch(error => console.error('Error loading sidebar:', error));
 
-
-        // Wrap all logic in a load event listener
-        window.addEventListener('load', () => {
-            // --- Navbar scroll effect ---
-            window.addEventListener('scroll', function () {
-                const navbar = document.getElementById('navbar');
-                const navbarContainer = navbar.querySelector('div');
-                const mainLogo = document.getElementById('main-logo');
-                const scrollLogo = document.getElementById('scroll-logo');
-
-                if (window.scrollY > 50) {
-                    navbar.classList.add('p-3');
-                    navbarContainer.classList.add('pill-navbar', 'rounded-full', 'border-white/10');
-                    navbarContainer.classList.remove('rounded-xl', 'border-transparent');
-                    mainLogo.style.opacity = '0';
-                    scrollLogo.style.opacity = '1';
-                    scrollLogo.style.position = 'static';
-                    mainLogo.style.position = 'absolute';
-                } else {
-                    navbar.classList.remove('p-3');
-                    navbarContainer.classList.remove('pill-navbar', 'rounded-full', 'border-white/10');
-                    navbarContainer.classList.add('rounded-xl', 'border-transparent');
-                    mainLogo.style.opacity = '1';
-                    scrollLogo.style.opacity = '0';
-                    mainLogo.style.position = 'static';
-                    scrollLogo.style.position = 'absolute';
-                }
-            });
-
-            // --- Modern Off-canvas Mobile Menu Logic ---
-            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-            const closeMenuBtn = document.getElementById('close-menu-btn');
-            const mobileMenuPanel = document.getElementById('mobile-menu-panel');
-            const menuOverlay = document.getElementById('menu-overlay');
-            const body = document.body;
-
-            const openMenu = () => {
-                mobileMenuPanel.classList.remove('hidden');
-                mobileMenuPanel.classList.remove('animate-close-menu');
-                mobileMenuPanel.classList.add('animate-open-menu');
-                menuOverlay.classList.remove('hidden');
-                body.classList.add('body-no-scroll');
-            };
-
-            const closeMenu = () => {
-                mobileMenuPanel.classList.remove('animate-open-menu');
-                mobileMenuPanel.classList.add('animate-close-menu');
-                menuOverlay.classList.add('hidden');
-                body.classList.remove('body-no-scroll');
-            };
-
-            mobileMenuBtn.addEventListener('click', openMenu);
-            closeMenuBtn.addEventListener('click', closeMenu);
-            menuOverlay.addEventListener('click', closeMenu);
-
-            // --- Smooth scrolling ---
-            function scrollToSection(sectionId) {
-                const element = document.getElementById(sectionId);
-                if (element) {
-                    closeMenu();
-                    setTimeout(() => {
-                        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }, 400);
-                }
-            }
-
-            const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function (e) {
-                    const href = this.getAttribute('href');
-                    // Only prevent default and do smooth scroll for anchor links
-                    if (href.startsWith('#')) {
-                        e.preventDefault();
-                        const sectionId = href.substring(1);
-                        scrollToSection(sectionId);
+                // --- Smooth scrolling ---
+                function scrollToSection(sectionId) {
+                    const element = document.getElementById(sectionId);
+                    if (element) {
+                        closeMenu();
+                        setTimeout(() => {
+                            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }, 400);
                     }
-                    // For non-anchor links, let the default behavior happen
-                    // This will navigate to the new page
+                }
+
+                const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function (e) {
+                        const href = this.getAttribute('href');
+                        // Only prevent default and do smooth scroll for anchor links
+                        if (href.startsWith('#')) {
+                            e.preventDefault();
+                            const sectionId = href.substring(1);
+                            scrollToSection(sectionId);
+                        }
+                        // For non-anchor links, let the default behavior happen
+                        // This will navigate to the new page
+                    });
                 });
+
+                // --- Scroll-triggered Fade-in Animation ---
+                const fadeInSections = document.querySelectorAll('.fade-in-section');
+                const observerOptions = {
+                    root: null,
+                    rootMargin: '0px',
+                    threshold: 0.15
+                };
+
+                const observer = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+
+                fadeInSections.forEach(section => {
+                    observer.observe(section);
+                });
+
+
             });
 
-            // --- Scroll-triggered Fade-in Animation ---
-            const fadeInSections = document.querySelectorAll('.fade-in-section');
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.15
-            };
-
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
-
-            fadeInSections.forEach(section => {
-                observer.observe(section);
-            });
-
-
-        });
-
-    </script>
+        </script>
 </body>
 
 </html>

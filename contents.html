@@ -103,15 +103,19 @@
                 <div class="space-y-10">
                     <div class="glass-effect p-8 rounded-2xl card-hover container-hover shine-effect">
                         <h3 class="text-2xl font-bold mb-4 text-accent font-nauryz">Sharrow</h3>
-                        <p class="text-gray-300 mb-6">Aku menemukan surat misterius di depan pintu, yang membawaku ketempat aneh berbentuk lorong ini. Aku harus keluar dari sini.</p>
-                        <a href="contents/sharrow.html" class="text-accent hover:text-yellow-200 font-semibold flex items-center gap-2">
+                        <p class="text-gray-300 mb-6">Aku menemukan surat misterius di depan pintu, yang membawaku
+                            ketempat aneh berbentuk lorong ini. Aku harus keluar dari sini.</p>
+                        <a href="contents/sharrow.html"
+                            class="text-accent hover:text-yellow-200 font-semibold flex items-center gap-2">
                             Baca Selengkapnya <span class="material-symbols-outlined">arrow_forward</span>
                         </a>
                     </div>
                     <div class="glass-effect p-8 rounded-2xl card-hover container-hover shine-effect">
                         <h3 class="text-2xl font-bold mb-4 text-accent font-nauryz">Altan</h3>
-                        <p class="text-gray-300 mb-6">Desa ini seharusnya menjadi tempat yang menyenangkan, namun kenapa ini harus terjadi?</p>
-                        <a href="contents/altan.html" class="text-accent hover:text-yellow-200 font-semibold flex items-center gap-2">
+                        <p class="text-gray-300 mb-6">Desa ini seharusnya menjadi tempat yang menyenangkan, namun kenapa
+                            ini harus terjadi?</p>
+                        <a href="contents/altan.html"
+                            class="text-accent hover:text-yellow-200 font-semibold flex items-center gap-2">
                             Baca Selengkapnya <span class="material-symbols-outlined">arrow_forward</span>
                         </a>
                     </div>
@@ -125,8 +129,10 @@
                 <h2 class="text-4xl font-bold text-center mb-8 gradient-text tracking-tighter font-nauryz">Lainnya</h2>
                 <div class="glass-effect p-8 rounded-2xl card-hover container-hover shine-effect">
                     <h3 class="text-2xl font-bold mb-4 text-accent font-nauryz">1372 Iceberg</h3>
-                    <p class="text-gray-300 mb-6">Hal-hal yang diketahui hingga tak diketahui dari 1372 dikemas dalam iceberg (tidak secara visual).</p>
-                    <a href="contents/iceberg.html" class="text-accent hover:text-yellow-200 font-semibold flex items-center gap-2">
+                    <p class="text-gray-300 mb-6">Hal-hal yang diketahui hingga tak diketahui dari 1372 dikemas dalam
+                        iceberg (tidak secara visual).</p>
+                    <a href="contents/iceberg.html"
+                        class="text-accent hover:text-yellow-200 font-semibold flex items-center gap-2">
                         Baca Selengkapnya <span class="material-symbols-outlined">arrow_forward</span>
                     </a>
                 </div>
@@ -134,9 +140,9 @@
         </section>
 
     </main>
-    <footer id="about" class="py-20 px-6 mt-24 border-t border-white/10 lg:flex lg:justify-center lg:items-center lg:space-x-6">
+    <footer id="footer"
+        class="lg:pl-20 py-20 px-6 mt-24 border-t border-white/10 lg:flex lg:justify-center lg:items-center lg:space-x-6">
     </footer>
-
     <script>
 
         // Load navbar and footer first
@@ -149,12 +155,11 @@
             })
             .catch(error => console.error('Error loading navbar:', error));
 
-        const footer = document.getElementById('about');
+        const footer = document.getElementById('footer');
         fetch('footer.html')
             .then(response => response.text())
             .then(data => {
-                const footerContainer = footer.querySelector('div');
-                footerContainer.innerHTML = data;
+                footer.innerHTML = data;
             })
             .catch(error => console.error('Error loading footer:', error));
 
@@ -272,7 +277,7 @@
 
             // --- Scroll-triggered Fade-in Animation ---
             const fadeInSections = document.querySelectorAll('.fade-in-section');
-            
+
             // Immediately show sections that are already visible
             fadeInSections.forEach(section => {
                 section.classList.add('is-visible');
