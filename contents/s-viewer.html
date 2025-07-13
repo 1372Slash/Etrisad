@@ -863,8 +863,9 @@
         if (newChapter >= 1 && newChapter <= chapters.length) {
           currentChapter = newChapter;
           updateChapterInfo();
-          window.history.pushState({}, "", `?chapter=${currentChapter}`);
-          window.scrollTo(0, 0);
+   const basePath = window.location.pathname.replace(/(\?.*)$/, "");
+    window.history.pushState({}, "", `${basePath}?chapter=${currentChapter}`);
+    window.scrollTo(0, 0);
           // Here you would typically load the new chapter content
         }
       }
