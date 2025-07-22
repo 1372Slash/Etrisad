@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etrisad - Kreatifitas, Selamanya</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Material Symbols -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!-- Modern Font (Geist Sans) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/geist-sans@5.0.3/css/all.min.css">
+    <link rel="icon" type="image/png" href="assets/images/etrisad_icon.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Parkinsans"', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#0A0A0A', // Slightly off-black
+                        secondary: '#0B5939',
+                        accent: '#F5E6A8',
+                        'brand-gray': '#1E1E1E'
+                    },
+                    backdropBlur: {
+                        xl: '24px',
+                    },
+                    keyframes: {
+                        aurora: {
+                            from: { backgroundPosition: '0% 50%' },
+                            to: { backgroundPosition: '100% 50%' },
+                        },
+                        'open-menu': {
+                            '0%': { transform: 'translateX(100%) scaleY(0)', opacity: '0' },
+                            '70%': { transform: 'translateX(-3%) scaleY(1.02)', opacity: '1' },
+                            '100%': { transform: 'translateX(0) scaleY(1)', opacity: '1' },
+                        },
+                        'close-menu': {
+                            '0%': { transform: 'translateX(0) scaleY(1)', opacity: '1' },
+                            '100%': { transform: 'translateX(100%) scaleY(0.9)', opacity: '0' },
+                        }
+                    },
+                    animation: {
+                        aurora: 'aurora 20s ease-in-out infinite alternate',
+                        'open-menu': 'open-menu 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards',
+                        'close-menu': 'close-menu 0.4s cubic-bezier(0.32, 0, 0.67, 0) forwards'
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @font-face {
+            font-family: Ribes;
+            src: url(assets/fonts/Ribes-Regular.otf);
+        }
+
+        @font-face {
+            font-family: Parkinsans;
+            src: url(assets/fonts/Parkinsans-Regular.ttf);
+        }
+
+        .font-nauryz {
+            font-family: Ribes, sans-serif;
+        }
+
+        .font-space {
+            font-family: Parkinsans, sans-serif;
+        }
+        @keyframes bounce-slow {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes float-gentle {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.animate-bounce-slow {
+    animation: bounce-slow 2s ease-in-out infinite;
+}
+
+.animate-float-gentle {
+    animation: float-gentle 3s ease-in-out infinite;
+}
+
+/* Hover effect for chevron */
+.chevron-container:hover .chevron-icon {
+    border-color: #F5E6A8;
+    transform: rotate(45deg) scale(1.1);
+    transition: all 0.3s ease;
+}
+
+.chevron-container:hover .chevron-text {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+    </style>
+</head>
+
+<body class="bg-primary font-sans overflow-x-hidden">
+    <div id="animated-bg"></div>
+
+    <!-- Navbar -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-40 transition-all duration-500 ease-in-out">
+    </header>
+
+    <!-- Off-canvas Mobile Menu -->
+    <div id="sidebar"></div>
+
+    <main>
+        <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+            <div class="container mx-auto px-6 text-center relative z-10 flex flex-col items-center">
+                <!-- <img src="assets/images/etrisad_long.png" alt="Etrisad Logo" class="h-20 w-auto mb-6"> -->
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 gradient-text tracking-tighter font-nauryz" \>
+                    Divisi</h1>
+                <p class="text-lg md:text-xl mb-10 max-w-3xl mx-auto text-gray-400 leading-relaxed">Sebuah organisasi yang bertanggung jawab atas tugas-tugas tertentu yang terkait dengan operasi atau fungsi yang spesifik.</p>
+                <!-- Home section button -->
+            </div>
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
+        <div class="flex flex-col items-center animate-bounce-slow cursor-pointer" onclick="scrollToNextSection()">
+            <!-- Chevron Icon -->
+            <div class="w-8 h-8 border-r-2 border-b-2 border-accent transform rotate-45 animate-pulse"></div>
+            <!-- Optional text -->
+            <span class="text-accent text-sm mt-2 opacity-80 font-medium">Scroll</span>
+        </div>
+    </div>
+        </section>
+
+        <!-- Divisi Konten Section -->
+        <section id="content" class="py-24 px-6 fade-in-section">
+    <div class="container mx-auto max-w-7xl">
+        <h2 class="text-4xl font-bold text-center mb-4 gradient-text tracking-tighter font-nauryz">Divisi Konten
+        </h2>
+        <p class="text-lg text-gray-400 text-center mb-12">Divisi yang memiliki tugas dalam pembuatan konten
+            yang dapat berupa video, aplikasi, dan media hiburan lainnya.</p>
+        
+        <!-- Desktop Grid Layout (unchanged) -->
+        <div class="hidden md:grid grid-cols-3 lg:grid-cols-5 gap-6 mb-12">
+            <!-- Untuk 1372slash -->
+            <div
+                class="glass-effect cursor-pointer rounded-2xl overflow-hidden card-hover container-hover shine-effect">
+                <div class="gradient-overlay relative w-full aspect-square flex items-end p-5"
+                    style="background-image: url('https://drive.google.com/thumbnail?id=1HxtGuccHKeTYR794mC9oWGVar5z8QzP-&sz=w1000'); background-size: cover; background-position: center;">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <h3 class="text-xl font-bold text-white relative z-10 font-nauryz">1372slash</h3>
+                </div>
+            </div>
+            <div
+                class="glass-effect cursor-pointer rounded-2xl overflow-hidden card-hover container-hover shine-effect">
+                <div class="gradient-overlay relative w-full aspect-square flex items-end p-5"
+                    style="background-image: url('https://drive.google.com/thumbnail?id=1I-V6-qg42Zv2-Adnlvr1jbyiJl3INE5U&sz=w1000'); background-size: cover; background-position: center;">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <h3 class="text-xl font-bold text-white relative z-10 font-nauryz">Azure</h3>
+                </div>
+            </div>
+            <div
+                class="glass-effect cursor-pointer rounded-2xl overflow-hidden card-hover container-hover shine-effect">
+                <div class="gradient-overlay relative w-full aspect-square flex items-end p-5"
+                    style="background-image: url('https://drive.google.com/thumbnail?id=1IAvg_YWZLu1B_LPfkb34vIgkg9tKn5PD&sz=w1000'); background-size: cover; background-position: center;">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <h3 class="text-xl font-bold text-white relative z-10 font-nauryz">AudioResult</h3>
+                </div>
+            </div>
+            <div
+                class="glass-effect cursor-pointer rounded-2xl overflow-hidden card-hover container-hover shine-effect">
+                <div class="gradient-overlay relative w-full aspect-square flex items-end p-5"
+                    style="background-image: url('https://drive.google.com/thumbnail?id=1I0R-p0OQ7hmvz5gc-x4pkHCXSMpBbLEZ&sz=w1000'); background-size: cover; background-position: center;">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <h3 class="text-xl font-bold text-white relative z-10 font-nauryz">Bayu Prana</h3>
+                </div>
+            </div>
+            <div
+                class="glass-effect cursor-pointer rounded-2xl overflow-hidden card-hover container-hover shine-effect">
+                <div class="gradient-overlay relative w-full aspect-square flex items-end p-5"
+                    style="background-image: url('https://drive.google.com/thumbnail?id=1IPEt6ZAmGCyrfr6b1tiJ-31AI0KqRPTv&sz=w1000'); background-size: cover; background-position: center;">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <h3 class="text-xl font-bold text-white relative z-10 font-nauryz">OpenStudio</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile List Layout -->
+        <div class="md:hidden space-y-4 mb-12">
+            <!-- 1372slash -->
+            <div class="glass-effect cursor-pointer rounded-2xl overflow-hidden card-hover container-hover shine-effect">
+                <div class="flex h-20 relative">
+                    <!-- Text Area -->
+                    <div class="flex-1 flex items-center px-6 relative z-10">
+                        <h3 class="text-xl font-bold text-white font-nauryz">1372slash</h3>
+                    </div>
+                    <!-- Image Area -->
+                    <div class="w-32 relative">
+                        <div class="absolute inset-0"
+                            style="background-image: url('https://drive.google.com/thumbnail?id=1HxtGuccHKeTYR794mC9oWGVar5z8QzP-&sz=w1000'); background-size: cover; background-position: center;">
+                        </div>
+                        <!-- Gradient overlay extending to left -->
+                        <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/40 to-transparent"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Azure -->
+            <div class="glass-effect cursor-pointer rounded-2xl overflow-hidden card-hover container-hover shine-effect">
+                <div class="flex h-20 relative">
+                    <!-- Text Area -->
+                    <div class="flex-1 flex items-center px-6 relative z-10">
+                        <h3 class="text-xl font-bold text-white font-nauryz">Azure</h3>
+                    </div>
+                    <!-- Image Area -->
+                    <div class="w-32 relative">
+                        <div class="absolute inset-0"
+                            style="background-image: url('https://drive.google.com/thumbnail?id=1I-V6-qg42Zv2-Adnlvr1jbyiJl3INE5U&sz=w1000'); background-size: cover; background-position: center;">
+                        </div>
+                        <!-- Gradient overlay extending to left -->
+                        <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/40 to-transparent"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AudioResult -->
+            <div class="glass-effect cursor-pointer rounded-2xl overflow-hidden card-hover container-hover shine-effect">
+                <div class="flex h-20 relative">
+                    <!-- Text Area -->
+                    <div class="flex-1 flex items-center px-6 relative z-10">
+                        <h3 class="text-xl font-bold text-white font-nauryz">AudioResult</h3>
+                    </div>
+                    <!-- Image Area -->
+                    <div class="w-32 relative">
+                        <div class="absolute inset-0"
+                            style="background-image: url('https://drive.google.com/thumbnail?id=1IAvg_YWZLu1B_LPfkb34vIgkg9tKn5PD&sz=w1000'); background-size: cover; background-position: center;">
+                        </div>
+                        <!-- Gradient overlay extending to left -->
+                        <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/40 to-transparent"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bayu Prana -->
+            <div class="glass-effect cursor-pointer rounded-2xl overflow-hidden card-hover container-hover shine-effect">
+                <div class="flex h-20 relative">
+                    <!-- Text Area -->
+                    <div class="flex-1 flex items-center px-6 relative z-10">
+                        <h3 class="text-xl font-bold text-white font-nauryz">Bayu Prana</h3>
+                    </div>
+                    <!-- Image Area -->
+                    <div class="w-32 relative">
+                        <div class="absolute inset-0"
+                            style="background-image: url('https://drive.google.com/thumbnail?id=1I0R-p0OQ7hmvz5gc-x4pkHCXSMpBbLEZ&sz=w1000'); background-size: cover; background-position: center;">
+                        </div>
+                        <!-- Gradient overlay extending to left -->
+                        <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/40 to-transparent"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- OpenStudio -->
+            <div class="glass-effect cursor-pointer rounded-2xl overflow-hidden card-hover container-hover shine-effect">
+                <div class="flex h-20 relative">
+                    <!-- Text Area -->
+                    <div class="flex-1 flex items-center px-6 relative z-10">
+                        <h3 class="text-xl font-bold text-white font-nauryz">OpenStudio</h3>
+                    </div>
+                    <!-- Image Area -->
+                    <div class="w-32 relative">
+                        <div class="absolute inset-0"
+                            style="background-image: url('https://drive.google.com/thumbnail?id=1IPEt6ZAmGCyrfr6b1tiJ-31AI0KqRPTv&sz=w1000'); background-size: cover; background-position: center;">
+                        </div>
+                        <!-- Gradient overlay extending to left -->
+                        <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/40 to-transparent"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Divisi Komunitas Section -->
+        <section id="community" class="py-24 px-6 fade-in-section">
+            <div class="container mx-auto max-w-7xl">
+                <h2 class="text-4xl font-bold text-center mb-4 gradient-text tracking-tighter font-nauryz">Divisi
+                    Komunitas
+                </h2>
+                <p class="text-lg text-gray-400 text-center mb-12">Divisi yang berfungsi sebagai tempat untuk suatu
+                    komunitas tertentu.</p>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-12">
+                    <div class="hidden md:block lg:col-span-2"></div>
+                    <div
+                        class="glass-effect cursor-pointer rounded-2xl overflow-hidden card-hover container-hover shine-effect">
+                        <div class="gradient-overlay relative w-full aspect-square flex items-end p-5"
+                            style="background-image: url('https://drive.google.com/thumbnail?id=1IQdL2pMCoj9l_eeyKQyr3Y94Ddom1fv2&sz=w1000'); background-size: cover; background-position: center;">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                            <h3 class="text-xl font-bold text-white relative z-10 font-nauryz">GlideFrame</h3>
+                        </div>
+                    </div>
+
+                    <div class="hidden md:block lg:col-span-2"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divisi Non-Aktif Section -->
+        <section id="non-active" class="py-24 px-6 fade-in-section">
+            <div class="container mx-auto max-w-7xl">
+                <h2 class="text-4xl font-bold text-center mb-4 gradient-text tracking-tighter font-nauryz">Divisi
+                    Non-Aktif
+                </h2>
+                <p class="text-lg text-gray-400 text-center mb-12">Divisi yang tidak aktif dalam jangka waktu lama.</p>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-12">
+                    <div
+                        class="glass-effect cursor-pointer rounded-2xl overflow-hidden card-hover container-hover shine-effect">
+                        <div class="gradient-overlay relative w-full aspect-square flex items-end p-5"
+                            style="background-image: url('https://drive.google.com/thumbnail?id=1SqZoa9nhsLe7YFV1Ne6kKCMd-4zamutm&sz=w1000'); background-size: cover; background-position: center;">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                            <div class="absolute top-4 right-4">
+                            <span class="px-2 py-1 text-xs bg-red-900/50 text-red-400 rounded-full">Non-Aktif</span>
+                        </div>
+                            <h3 class="text-xl font-bold text-white relative z-10 font-nauryz">LPJ</h3>
+                        </div>
+                    </div>
+                    <div
+                        class="glass-effect cursor-pointer rounded-2xl overflow-hidden card-hover container-hover shine-effect">
+                        <div class="gradient-overlay relative w-full aspect-square flex items-end p-5"
+                            style="background-image: url('https://drive.google.com/thumbnail?id=1SqZoa9nhsLe7YFV1Ne6kKCMd-4zamutm&sz=w1000'); background-size: cover; background-position: center;">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                            <div class="absolute top-4 right-4">
+                            <span class="px-2 py-1 text-xs bg-red-900/50 text-red-400 rounded-full">Non-Aktif</span>
+                        </div>
+                            <h3 class="text-xl font-bold text-white relative z-10 font-nauryz">1372Clips</h3>
+                        </div>
+                    </div>
+                    <div
+                        class="glass-effect cursor-pointer rounded-2xl overflow-hidden card-hover container-hover shine-effect">
+                        <div class="gradient-overlay relative w-full aspect-square flex items-end p-5"
+                            style="background-image: url('https://drive.google.com/thumbnail?id=1SqZoa9nhsLe7YFV1Ne6kKCMd-4zamutm&sz=w1000'); background-size: cover; background-position: center;">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                            <div class="absolute top-4 right-4">
+                            <span class="px-2 py-1 text-xs bg-red-900/50 text-red-400 rounded-full">Non-Aktif</span>
+                        </div>
+                            <h3 class="text-xl font-bold text-white relative z-10 font-nauryz">MineMusic</h3>
+                        </div>
+                    </div>
+                    <div
+                        class="glass-effect cursor-pointer rounded-2xl overflow-hidden card-hover container-hover shine-effect">
+                        <div class="gradient-overlay relative w-full aspect-square flex items-end p-5"
+                            style="background-image: url('https://drive.google.com/thumbnail?id=1SqZoa9nhsLe7YFV1Ne6kKCMd-4zamutm&sz=w1000'); background-size: cover; background-position: center;">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                            <div class="absolute top-4 right-4">
+                            <span class="px-2 py-1 text-xs bg-red-900/50 text-red-400 rounded-full">Non-Aktif</span>
+                        </div>
+                            <h3 class="text-xl font-bold text-white relative z-10 font-nauryz">Mine_Live</h3>
+                        </div>
+                    </div>
+                    <div
+                        class="glass-effect cursor-pointer rounded-2xl overflow-hidden card-hover container-hover shine-effect">
+                        <div class="gradient-overlay relative w-full aspect-square flex items-end p-5"
+                            style="background-image: url('https://drive.google.com/thumbnail?id=1SqZoa9nhsLe7YFV1Ne6kKCMd-4zamutm&sz=w1000'); background-size: cover; background-position: center;">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                            <div class="absolute top-4 right-4">
+                            <span class="px-2 py-1 text-xs bg-red-900/50 text-red-400 rounded-full">Non-Aktif</span>
+                        </div>
+                            <h3 class="text-xl font-bold text-white relative z-10 font-nauryz">Mine_Dub</h3>
+                        </div>
+                    </div>
+                    <div
+                        class="glass-effect cursor-pointer rounded-2xl overflow-hidden card-hover container-hover shine-effect">
+                        <div class="gradient-overlay relative w-full aspect-square flex items-end p-5"
+                            style="background-image: url('https://drive.google.com/thumbnail?id=1SqZoa9nhsLe7YFV1Ne6kKCMd-4zamutm&sz=w1000'); background-size: cover; background-position: center;">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                            <div class="absolute top-4 right-4">
+                            <span class="px-2 py-1 text-xs bg-red-900/50 text-red-400 rounded-full">Non-Aktif</span>
+                        </div>
+                            <h3 class="text-xl font-bold text-white relative z-10 font-nauryz">Orixo</h3>
+                        </div>
+                    </div>
+                    <div
+                        class="glass-effect cursor-pointer rounded-2xl overflow-hidden card-hover container-hover shine-effect">
+                        <div class="gradient-overlay relative w-full aspect-square flex items-end p-5"
+                            style="background-image: url('https://drive.google.com/thumbnail?id=1SqZoa9nhsLe7YFV1Ne6kKCMd-4zamutm&sz=w1000'); background-size: cover; background-position: center;">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                            <div class="absolute top-4 right-4">
+                            <span class="px-2 py-1 text-xs bg-red-900/50 text-red-400 rounded-full">Non-Aktif</span>
+                        </div>
+                            <h3 class="text-xl font-bold text-white relative z-10 font-nauryz">ClipToon</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <footer id="footer"
+        class="lg:pl-20 py-20 px-6 mt-24 border-t border-white/10 lg:flex lg:justify-center lg:items-center lg:space-x-6">
+    </footer>
+    <script>
+        function scrollToNextSection() {
+    const nextSection = document.querySelector('section:nth-child(2)'); // Assuming the next section is the second one
+    if (nextSection) {
+        nextSection.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'start' 
+        });
+    }
+}
+
+// Alternative: You can also make it scroll to a specific section
+function scrollToDivisiSection() {
+    const divisiSection = document.querySelector('section[id*="content"], .min-h-screen:nth-child(2)');
+    if (divisiSection) {
+        divisiSection.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'start' 
+        });
+    }
+}
+
+// Hide chevron when scrolling down
+window.addEventListener('scroll', function() {
+    const chevron = document.querySelector('.chevron-scroll-indicator');
+    const scrollPosition = window.scrollY;
+    
+    if (scrollPosition > 100) {
+        if (chevron) {
+            chevron.style.opacity = '0';
+            chevron.style.transform = 'translateX(-50%) translateY(20px)';
+        }
+    } else {
+        if (chevron) {
+            chevron.style.opacity = '1';
+            chevron.style.transform = 'translateX(-50%) translateY(0)';
+        }
+    }
+});
+
+        // Load navbar and footer first
+        const nav = document.getElementById('navbar');
+        fetch('nav.html')
+            .then(response => response.text())
+            .then(data => {
+                nav.innerHTML = data;
+                initializePageLogic(); // Initialize after navbar is loaded
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+
+        const footer = document.getElementById('footer');
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                footer.innerHTML = data;
+            })
+            .catch(error => console.error('Error loading footer:', error));
+
+        const sidebar = document.getElementById('sidebar');
+        fetch('sidebar.html')
+            .then(response => response.text())
+            .then(data => {
+                sidebar.innerHTML = data;
+                // Inisialisasi tombol menu, close, dsb di sini
+                const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+                const closeMenuBtn = document.getElementById('close-menu-btn');
+                const mobileMenuPanel = document.getElementById('mobile-menu-panel');
+                const menuOverlay = document.getElementById('menu-overlay');
+                const body = document.body;
+
+                // ...event listener open/close menu...
+                const openMenu = () => {
+                    mobileMenuPanel.classList.remove('hidden');
+                    mobileMenuPanel.classList.remove('animate-close-menu');
+                    mobileMenuPanel.classList.add('animate-open-menu');
+                    menuOverlay.classList.remove('hidden');
+                    body.classList.add('body-no-scroll');
+                };
+
+                const closeMenu = () => {
+                    mobileMenuPanel.classList.remove('animate-open-menu');
+                    mobileMenuPanel.classList.add('animate-close-menu');
+                    menuOverlay.classList.add('hidden');
+                    body.classList.remove('body-no-scroll');
+                };
+
+                mobileMenuBtn.addEventListener('click', openMenu);
+                closeMenuBtn.addEventListener('click', closeMenu);
+                menuOverlay.addEventListener('click', closeMenu);
+            })
+            .catch(error => console.error('Error loading sidebar:', error));
+
+        function initializePageLogic() {
+            // --- Navbar scroll effect ---
+            window.addEventListener('scroll', function () {
+                const navbar = document.getElementById('navbar');
+                const navbarContainer = navbar.querySelector('div');
+                const mainLogo = document.getElementById('main-logo');
+                const scrollLogo = document.getElementById('scroll-logo');
+
+                if (!navbarContainer || !mainLogo || !scrollLogo) return;
+
+                if (window.scrollY > 50) {
+                    navbar.classList.add('p-3');
+                    navbarContainer.classList.add('pill-navbar', 'rounded-full', 'border-white/10');
+                    navbarContainer.classList.remove('rounded-xl', 'border-transparent');
+                    mainLogo.style.opacity = '0';
+                    scrollLogo.style.opacity = '1';
+                    scrollLogo.style.position = 'static';
+                    mainLogo.style.position = 'absolute';
+                } else {
+                    navbar.classList.remove('p-3');
+                    navbarContainer.classList.remove('pill-navbar', 'rounded-full', 'border-white/10');
+                    navbarContainer.classList.add('rounded-xl', 'border-transparent');
+                    mainLogo.style.opacity = '1';
+                    scrollLogo.style.opacity = '0';
+                    mainLogo.style.position = 'static';
+                    scrollLogo.style.position = 'absolute';
+                }
+            });
+
+            // --- Modern Off-canvas Mobile Menu Logic ---
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const closeMenuBtn = document.getElementById('close-menu-btn');
+            const mobileMenuPanel = document.getElementById('mobile-menu-panel');
+            const menuOverlay = document.getElementById('menu-overlay');
+            const body = document.body;
+
+            const openMenu = () => {
+                mobileMenuPanel.classList.remove('hidden');
+                mobileMenuPanel.classList.remove('animate-close-menu');
+                mobileMenuPanel.classList.add('animate-open-menu');
+                menuOverlay.classList.remove('hidden');
+                body.classList.add('body-no-scroll');
+            };
+
+            const closeMenu = () => {
+                mobileMenuPanel.classList.remove('animate-open-menu');
+                mobileMenuPanel.classList.add('animate-close-menu');
+                menuOverlay.classList.add('hidden');
+                body.classList.remove('body-no-scroll');
+            };
+
+            if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', openMenu);
+            if (closeMenuBtn) closeMenuBtn.addEventListener('click', closeMenu);
+            if (menuOverlay) menuOverlay.addEventListener('click', closeMenu);
+
+            // --- Smooth scrolling ---
+            function scrollToSection(sectionId) {
+                const element = document.getElementById(sectionId);
+                if (element) {
+                    closeMenu();
+                    setTimeout(() => {
+                        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }, 400);
+                }
+            }
+
+            const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    const href = this.getAttribute('href');
+                    if (href.startsWith('#')) {
+                        e.preventDefault();
+                        const sectionId = href.substring(1);
+                        scrollToSection(sectionId);
+                    }
+                });
+            });
+
+            // --- Scroll-triggered Fade-in Animation ---
+            const fadeInSections = document.querySelectorAll('.fade-in-section');
+
+            // Immediately show sections that are already visible
+            fadeInSections.forEach(section => {
+                section.classList.add('is-visible');
+            });
+        }
+
+    </script>
+</body>
+
+</html>
